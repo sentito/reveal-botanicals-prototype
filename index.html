@@ -187,8 +187,10 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 .page { display: none; }
 .page.active { display: block; }
 
-.org-logos { display: flex; gap: 30px; justify-content: center; align-items: center; margin-top: 40px; flex-wrap: wrap; }
-.org-logo { background: white; border-radius: 8px; padding: 12px 20px; font-size: 12px; color: var(--text-medium); font-weight: 500; letter-spacing: 0.5px; border: 1px solid rgba(123,94,167,0.1); }
+.org-logos { display: flex; gap: 30px; justify-content: center; align-items: stretch; margin-top: 40px; flex-wrap: wrap; }
+.org-logo { background: white; border-radius: 8px; padding: 20px 24px; font-size: 12px; color: var(--text-medium); font-weight: 500; letter-spacing: 0.5px; border: 1px solid rgba(123,94,167,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; min-width: 160px; }
+.org-logo-icon { font-size: 42px; line-height: 1; }
+.org-logo-name { font-size: 12px; line-height: 1.4; }
 
 .credentials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
 .credential-item { padding: 16px; background: var(--cream); border-radius: 8px; border-left: 3px solid var(--gold); }
@@ -407,9 +409,9 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 
   <!-- Org logos -->
   <div class="org-logos" style="margin-top: 50px;">
-    <div class="org-logo">🌿 American Herbalists Guild</div>
-    <div class="org-logo">🌱 American Botanical Council</div>
-    <div class="org-logo">🍃 Washington Native Plant Society</div>
+    <div class="org-logo"><span class="org-logo-icon">🌿</span><span class="org-logo-name">American Herbalists Guild</span></div>
+    <div class="org-logo"><span class="org-logo-icon">🌱</span><span class="org-logo-name">American Botanical Council</span></div>
+    <div class="org-logo"><span class="org-logo-icon">🍃</span><span class="org-logo-name">Washington Native Plant Society</span></div>
   </div>
 </section>
 
