@@ -876,6 +876,15 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 </footer>
 
 <script>
+function togglePlantAccordion(plantId) {
+  const card = document.getElementById('plant-' + plantId);
+  const trigger = card.querySelector('.plant-accordion-trigger');
+  const isOpen = card.classList.contains('expanded');
+  card.classList.toggle('expanded', !isOpen);
+  trigger.setAttribute('aria-expanded', !isOpen);
+  card.querySelector('.plant-accordion-hint').textContent = isOpen ? 'Click to expand' : 'Click to collapse';
+}
+
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + pageId).classList.add('active');
