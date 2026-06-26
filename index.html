@@ -294,6 +294,148 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
   .plant-detail-hero { grid-template-columns: 1fr; }
   .plant-modal-box { max-height: 90vh; }
 }
+
+/* Collection page (prototype — mirrors revealbotanicals.com/work) */
+.collection-page { background: #1e1828; color: #e8cef5; min-height: 100vh; }
+.collection-masthead {
+  text-align: center;
+  padding: 110px 40px 70px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.collection-masthead h1 {
+  font-family: 'Sorts Mill Goudy', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  color: #f5f0fa;
+  line-height: 1.2;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+.collection-masthead p {
+  font-size: clamp(17px, 2.2vw, 22px);
+  line-height: 1.65;
+  color: #d5d2ff;
+  font-style: italic;
+  margin-bottom: 36px;
+}
+.collection-masthead-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.collection-masthead-btns a {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 1px solid rgba(232,206,245,0.45);
+  color: #e8cef5;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+.collection-masthead-btns a:hover { background: rgba(232,206,245,0.12); color: #fff; }
+.collection-scroll-hint {
+  margin-top: 40px;
+  color: rgba(232,206,245,0.5);
+  font-size: 22px;
+  animation: collectionBounce 2s ease infinite;
+}
+@keyframes collectionBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+.collection-grid-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px 80px; }
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+}
+.collection-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background: #2a2235;
+  width: 100%;
+  text-align: left;
+}
+.collection-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease, opacity 0.35s ease;
+}
+.collection-card:hover img { transform: scale(1.04); opacity: 0.82; }
+.collection-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(30,24,40,0.55);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.collection-card:hover .collection-card-overlay,
+.collection-card:focus .collection-card-overlay { opacity: 1; }
+.collection-card-title {
+  font-family: 'Sorts Mill Goudy', serif;
+  font-size: clamp(20px, 3vw, 28px);
+  color: #fff;
+  text-align: center;
+  line-height: 1.3;
+}
+.collection-prototype-note {
+  text-align: center;
+  padding: 0 40px 24px;
+  font-size: 12px;
+  color: rgba(232,206,245,0.45);
+  letter-spacing: 0.5px;
+}
+.collection-detail { display: none; padding: 100px 40px 80px; max-width: 1000px; margin: 0 auto; }
+.collection-detail.active { display: block; }
+.collection-detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  color: #c4a8e8;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 32px;
+  padding: 0;
+}
+.collection-detail-back:hover { color: #e8cef5; }
+.collection-detail h2 {
+  font-family: 'Sorts Mill Goudy', serif;
+  font-size: 40px;
+  color: #f5f0fa;
+  margin-bottom: 24px;
+}
+.collection-detail-hero {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+.collection-detail-note {
+  font-size: 15px;
+  color: #d5d2ff;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.collection-detail-note a { color: #c4a8e8; }
+.collection-index-view.hidden { display: none; }
+@media (max-width: 640px) {
+  .collection-grid { grid-template-columns: 1fr; }
+  .collection-masthead { padding: 100px 24px 50px; }
+}
 </style>
 </head>
 <body>
@@ -305,6 +447,7 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
     <a href="#" onclick="showPage('services')">Services</a>
     <a href="#" onclick="showPage('about')">About</a>
     <a href="#" onclick="showPage('sanctuary')">Botanical Sanctuary</a>
+    <a href="#" onclick="showPage('collection')">Collection</a>
     <a href="#" onclick="showPage('insights')">Botanical Insights</a>
     <a href="#" onclick="showPage('contact')">Contact</a>
     <a class="nav-cta" href="#" onclick="showPage('contact')">Book a Discovery Call</a>
@@ -810,7 +953,39 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 </div>
 
 <!-- ============================================ -->
-<!-- PAGE 5: BOTANICAL INSIGHTS (Blog) -->
+<!-- PAGE 5: COLLECTION (prototype) -->
+<!-- ============================================ -->
+<div id="page-collection" class="page collection-page">
+
+<div class="page-label">COLLECTION &mdash; PROTOTYPE</div>
+
+<div id="collection-index-view" class="collection-index-view">
+  <div class="collection-masthead">
+    <h1>Immerse Yourself in the Power of Plants</h1>
+    <p>Allow me to walk with you for a while, and together we will discover the nuances of who you are, reveal botanical allies, and find keys to unlock your personal potential for growth and well-being. To explore a representative collection of Botanicals &amp; Fungi, click on the photos below.</p>
+    <div class="collection-masthead-btns">
+      <a href="#" onclick="showPage('about'); return false;">Expectations</a>
+      <a href="#" onclick="showPage('contact'); return false;">Contact</a>
+    </div>
+    <div class="collection-scroll-hint" aria-hidden="true">&#9662;</div>
+  </div>
+  <p class="collection-prototype-note">Prototype gallery &mdash; photos from revealbotanicals.com. Click any image to preview.</p>
+  <div class="collection-grid-wrap">
+    <div class="collection-grid" id="collection-grid"></div>
+  </div>
+</div>
+
+<div id="collection-detail-view" class="collection-detail">
+  <button type="button" class="collection-detail-back" onclick="closeCollectionDetail()">&#8592; Back to Collection</button>
+  <h2 id="collection-detail-title"></h2>
+  <img id="collection-detail-img" class="collection-detail-hero" src="" alt="">
+  <p class="collection-detail-note">This is a preview of the collection index card. The full image galleries with botanical captions live on the current site &mdash; <a id="collection-detail-link" href="#" target="_blank" rel="noopener">view the complete gallery</a>.</p>
+</div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- PAGE 6: BOTANICAL INSIGHTS (Blog) -->
 <!-- ============================================ -->
 <div id="page-insights" class="page">
 
@@ -874,7 +1049,7 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 </div>
 
 <!-- ============================================ -->
-<!-- PAGE 6: CONTACT -->
+<!-- PAGE 7: CONTACT -->
 <!-- ============================================ -->
 <div id="page-contact" class="page">
 
@@ -946,6 +1121,7 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
       <a href="#" onclick="showPage('services')">Services</a>
       <a href="#" onclick="showPage('about')">About</a>
       <a href="#" onclick="showPage('sanctuary')">Botanical Sanctuary</a>
+      <a href="#" onclick="showPage('collection')">Collection</a>
       <a href="#" onclick="showPage('insights')">Botanical Insights</a>
       <a href="#" onclick="showPage('contact')">Contact</a>
     </div>
@@ -1021,10 +1197,53 @@ function togglePlantAccordion(plantId) {
   card.querySelector('.plant-accordion-hint').textContent = isOpen ? 'Click to expand' : 'Click to collapse';
 }
 
+const collectionItems = [
+  { slug: 'force-within', title: 'The Force Within', img: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/35a0398b-577a-4817-92b1-b36e973bd69d_carw_4x3x1280.jpeg?h=f10660846facbc8f9b3ee90d05a27682' },
+  { slug: 'the-space-between', title: 'The Space Between', img: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/28bd2f4c-867c-4178-8d3b-90ca314d6185_carw_4x3x1280.jpeg?h=bed35f9dac9f5f44cac642814b9ca230' },
+  { slug: 'the-prospect-of-a-new-day', title: 'The Prospect of a New Day', img: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/3f138168-fed0-4aae-a2e6-33d85a7b3450_carw_4x3x1280.jpg?h=6eb15b552b999f46514cd52b8a1ae23d' },
+  { slug: 'guard-your-thoughts', title: 'Guard Your Thoughts', img: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/382f0fa5-1ee4-411c-8328-fcfdddb59390_rwc_217x0x3413x2560x1280.jpg?h=0bfbaa4154fc8a70975744edaa93e86f' },
+  { slug: 'compassion', title: 'Compassion', img: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/3aa666a7-c02a-4438-be9a-06a2b420c9d0_carw_4x3x1280.jpeg?h=770dae2c3f180512ea652e58afc9de69' },
+  { slug: 'to-be-revealed', title: 'Gone to the Meadow', img: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/81c1645d-53cc-42b5-8573-b30d07871541_rwc_484x0x2879x2160x1280.jpg?h=cede426e1e94d8bfb1b120777fac9d32' },
+  { slug: 'connect', title: 'Connect', img: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/643e5386-6523-486c-9cf7-6ee4565dcfe1_rwc_56x0x889x667x889.jpg?h=adb70edb89dbf86c549fbcb522677278' },
+  { slug: 'let-the-orchestra-play', title: 'Let the Orchestra Play', img: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/ac17d0d0-0d28-46ea-ae12-ce61d7f53895_rwc_217x0x3413x2560x1280.jpg?h=35c8ef3303680167b3152e1f835a8776' },
+  { slug: 'be-yourself', title: 'Be What You Are', img: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/c10ec274-9b7a-41d2-b1ee-57ad04c75253_carw_4x3x1280.jpeg?h=a76fb97b1f75d14c86a080711d46e5a5' },
+  { slug: 'light-and-shade', title: 'Light and Shade', img: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/73938e29-3c17-4dff-b088-f65bbd33d2a0_carw_4x3x1280.jpeg?h=22cfa172504ac456d91390e80ba5ab72' }
+];
+
+(function initCollectionGrid() {
+  const grid = document.getElementById('collection-grid');
+  if (!grid) return;
+  grid.innerHTML = collectionItems.map(function(item, i) {
+    return '<button type="button" class="collection-card" onclick="openCollectionDetail(' + i + ')" aria-label="' + item.title + '">' +
+      '<img src="' + item.img + '" alt="' + item.title + '" loading="lazy">' +
+      '<span class="collection-card-overlay"><span class="collection-card-title">' + item.title + '</span></span>' +
+      '</button>';
+  }).join('');
+})();
+
+function openCollectionDetail(index) {
+  const item = collectionItems[index];
+  if (!item) return;
+  document.getElementById('collection-detail-title').textContent = item.title;
+  document.getElementById('collection-detail-img').src = item.img;
+  document.getElementById('collection-detail-img').alt = item.title;
+  document.getElementById('collection-detail-link').href = 'https://revealbotanicals.com/' + item.slug;
+  document.getElementById('collection-index-view').classList.add('hidden');
+  document.getElementById('collection-detail-view').classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function closeCollectionDetail() {
+  document.getElementById('collection-index-view').classList.remove('hidden');
+  document.getElementById('collection-detail-view').classList.remove('active');
+  window.scrollTo(0, 0);
+}
+
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + pageId).classList.add('active');
   closePlantModal();
+  closeCollectionDetail();
   window.scrollTo(0, 0);
 }
 </script>
