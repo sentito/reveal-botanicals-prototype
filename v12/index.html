@@ -595,6 +595,90 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
   .collection-grid { grid-template-columns: 1fr; }
   .collection-masthead { padding: 100px 24px 50px; }
 }
+
+/* Collection color preview toggle (reversible — default stays original dark) */
+.collection-theme-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 12px;
+  padding: 12px 24px 0;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+.collection-theme-toggle > span { color: rgba(232,206,245,0.55); }
+.collection-theme-btn {
+  border: 1px solid rgba(232,206,245,0.35);
+  background: transparent;
+  color: #e8cef5;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.collection-theme-btn:hover { background: rgba(232,206,245,0.1); }
+.collection-theme-btn.active {
+  background: rgba(232,206,245,0.18);
+  border-color: rgba(232,206,245,0.6);
+  color: #fff;
+}
+
+/* Option B: align Collection with main site palette (cream, plum, purple, gold) */
+.collection-page.collection-theme-site {
+  background: var(--warm-white);
+  color: var(--text-dark);
+}
+.collection-page.collection-theme-site .collection-theme-toggle > span { color: var(--text-light); }
+.collection-page.collection-theme-site .collection-theme-btn {
+  border-color: rgba(123,94,167,0.25);
+  color: var(--text-medium);
+}
+.collection-page.collection-theme-site .collection-theme-btn:hover { background: var(--purple-light); color: var(--purple-dark); }
+.collection-page.collection-theme-site .collection-theme-btn.active {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: #fff;
+}
+.collection-page.collection-theme-site .collection-masthead h1 { color: var(--deep-plum); }
+.collection-page.collection-theme-site .collection-masthead p { color: var(--text-medium); }
+.collection-page.collection-theme-site .collection-masthead-btns a,
+.collection-page.collection-theme-site .collection-detail-actions a,
+.collection-page.collection-theme-site .collection-detail-actions button.collection-action-btn {
+  border-color: var(--purple);
+  color: var(--purple-dark);
+}
+.collection-page.collection-theme-site .collection-masthead-btns a:hover,
+.collection-page.collection-theme-site .collection-detail-actions a:hover,
+.collection-page.collection-theme-site .collection-detail-actions button.collection-action-btn:hover {
+  background: var(--purple-light);
+  color: var(--purple-dark);
+}
+.collection-page.collection-theme-site .collection-scroll-hint { color: var(--purple); opacity: 0.45; }
+.collection-page.collection-theme-site .collection-prototype-note { color: var(--text-light); }
+.collection-page.collection-theme-site .collection-grid { gap: 12px; }
+.collection-page.collection-theme-site .collection-card {
+  background: var(--cream);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(45,36,56,0.08);
+}
+.collection-page.collection-theme-site .collection-card-overlay { background: rgba(92,64,128,0.55); }
+.collection-page.collection-theme-site .collection-detail-back { color: var(--purple); }
+.collection-page.collection-theme-site .collection-detail-back:hover { color: var(--purple-dark); }
+.collection-page.collection-theme-site .collection-detail h2 { color: var(--deep-plum); }
+.collection-page.collection-theme-site .collection-detail-quote { color: var(--text-medium); }
+.collection-page.collection-theme-site .collection-detail-attrib { color: var(--gold); }
+.collection-page.collection-theme-site .collection-gallery-image-wrap img {
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(45,36,56,0.1);
+}
+.collection-page.collection-theme-site .collection-gallery-credits { color: var(--text-light); }
+.collection-page.collection-theme-site .collection-gallery-text { color: var(--purple-dark); }
+.collection-page.collection-theme-site .collection-related { border-top-color: rgba(123,94,167,0.15); }
+.collection-page.collection-theme-site .collection-related h3 { color: var(--purple-dark); }
+.collection-page.collection-theme-site .collection-related-card { background: var(--cream); border-radius: 6px; }
 </style>
 </head>
 <body>
@@ -1118,6 +1202,12 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 
 <div class="page-label">COLLECTION &mdash; PROTOTYPE</div>
 
+<div class="collection-theme-toggle" id="collection-theme-toggle" aria-label="Collection color preview">
+  <span>Preview colors:</span>
+  <button type="button" class="collection-theme-btn active" id="collection-theme-original" onclick="setCollectionTheme('original')">Original (dark)</button>
+  <button type="button" class="collection-theme-btn" id="collection-theme-site" onclick="setCollectionTheme('site')">Match site (light)</button>
+</div>
+
 <div id="collection-index-view" class="collection-index-view">
   <div class="collection-masthead">
     <h1>Immerse Yourself in the Power of Plants</h1>
@@ -1535,6 +1625,23 @@ const collectionItems = [
 let currentCollectionIndex = -1;
 let currentCollectionImages = [];
 let currentLightboxIndex = -1;
+
+function setCollectionTheme(theme) {
+  const page = document.getElementById('page-collection');
+  const isSite = theme === 'site';
+  if (page) page.classList.toggle('collection-theme-site', isSite);
+  const btnOrig = document.getElementById('collection-theme-original');
+  const btnSite = document.getElementById('collection-theme-site');
+  if (btnOrig) btnOrig.classList.toggle('active', !isSite);
+  if (btnSite) btnSite.classList.toggle('active', isSite);
+  try { sessionStorage.setItem('collectionTheme', theme); } catch (e) {}
+}
+
+(function initCollectionTheme() {
+  let theme = 'original';
+  try { theme = sessionStorage.getItem('collectionTheme') || 'original'; } catch (e) {}
+  setCollectionTheme(theme);
+})();
 
 (function initCollectionGrid() {
   const grid = document.getElementById('collection-grid');
