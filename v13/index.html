@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-03-v13-mobile-nav-menu -->
+<!-- deploy: 2026-07-03-v13-all-collection-banner-galleries -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -494,23 +494,23 @@ body.collection-active { background: var(--deep-plum); }
   margin-right: auto;
 }
 .collection-detail-attrib { font-size: 18px; color: #c4a8e8; margin: 0; }
-.collection-detail.force-within-detail {
+.collection-detail.collection-banner-detail {
   padding-top: 72px;
 }
-.collection-detail.force-within-detail .collection-detail-back {
+.collection-detail.collection-banner-detail .collection-detail-back {
   margin-bottom: 18px;
 }
-.collection-detail.force-within-detail .collection-detail-header {
+.collection-detail.collection-banner-detail .collection-detail-header {
   margin-bottom: 20px;
 }
-.collection-detail.force-within-detail h2,
-.collection-detail.force-within-detail .collection-detail-quote {
+.collection-detail.collection-banner-detail h2,
+.collection-detail.collection-banner-detail .collection-detail-quote {
   color: var(--gold-light);
 }
-.collection-detail.force-within-detail h2 {
+.collection-detail.collection-banner-detail h2 {
   margin-bottom: 6px;
 }
-.collection-detail.force-within-detail .collection-detail-quote {
+.collection-detail.collection-banner-detail .collection-detail-quote {
   font-family: 'Sorts Mill Goudy', serif;
   font-size: clamp(19px, 2.2vw, 23px);
   margin-bottom: 4px;
@@ -782,8 +782,8 @@ body.collection-active { background: var(--deep-plum); }
 .collection-page.collection-theme-site .collection-detail-back:hover { color: var(--purple-dark); }
 .collection-page.collection-theme-site .collection-detail h2 { color: #f5f0fa; }
 .collection-page.collection-theme-site .collection-detail-quote { color: #d5d2ff; }
-.collection-page.collection-theme-site .collection-detail.force-within-detail h2,
-.collection-page.collection-theme-site .collection-detail.force-within-detail .collection-detail-quote {
+.collection-page.collection-theme-site .collection-detail.collection-banner-detail h2,
+.collection-page.collection-theme-site .collection-detail.collection-banner-detail .collection-detail-quote {
   color: var(--gold-light);
 }
 .collection-page.collection-theme-site .collection-detail-attrib { color: var(--gold); }
@@ -1536,32 +1536,6 @@ const plantModalData = {
       ['Sanctuary note:', 'Photo and full profile coming soon']
     ]
   },
-  'forcewithin-jack': {
-    title: 'Jack-In-the-Pulpit',
-    latin: 'Arisaema triphyllum',
-    family: 'Araceae Family',
-    text: 'Native to eastern US hardwood forests - my childhood introduction to the mysteries of native plants',
-    details: []
-  },
-  'forcewithin-skunk': {
-    title: 'Western Skunk Cabbage',
-    latin: 'Lysichiton americanus',
-    family: 'Araceae family',
-    text: 'Pacific NW Native that shares some similarities to its eastern counterpart, Symplocarpus foetidus, which are classified in different genera. Both might be indicated only in very low amounts by skilled herbalists for relaxing the respiratory and musculosketetal tissues. This fresh wetland plant, as well as its cousin, Jack-in-the-Pulpit above, is high in calcium oxalates known as raphides that are particularly excoriating to the tissues, and may be fatal without correct and intentional processing for safe use. Their aroma is strong and skunk-like, attracting certain beneficial pollinators.',
-    details: []
-  },
-  'forcewithin-comfrey': {
-    title: 'Comfrey',
-    latin: 'Symphytum officinale',
-    family: 'Boraginaceae family',
-    text: 'Known as "knitbone" for its remarkable ability to support tissue repair. Large, hairy leaves and bell-shaped purple flowers make it unmistakable in the shade garden.',
-    details: [
-      ['In the garden:', 'Shade-loving perennial; spreads generously where happy'],
-      ['Harvest:', 'Leaves before flowering, or roots in early spring or late fall'],
-      ['Traditional use:', 'Topical poultices and salves for joint and muscle support'],
-      ['Sanctuary note:', 'Grown for external preparations; internal use requires professional guidance']
-    ]
-  }
 };
 
 function getActivePlantModalPrefix() {
@@ -1575,8 +1549,10 @@ function isPlantModalOpen() {
     !document.getElementById('collection-plant-modal').hidden;
 }
 
+let collectionPlantModalData = {};
+
 function openPlantModal(plantId, evt) {
-  const data = plantModalData[plantId];
+  const data = plantModalData[plantId] || collectionPlantModalData[plantId];
   if (!data) return;
   if (evt && evt.preventDefault) evt.preventDefault();
   const prefix = getActivePlantModalPrefix();
@@ -1851,29 +1827,53 @@ function buildSanctuaryStyleBanner(text) {
     '</div>';
 }
 
-const forceWithinModalIds = ['forcewithin-jack', 'forcewithin-skunk', 'forcewithin-comfrey'];
+function buildPlantModalEntryFromBanner(text) {
+  const parsed = parseForceWithinBanner(text);
+  let bodyText = parsed.description;
+  if (!bodyText) {
+    const parts = text.split(' - ');
+    if (parts.length >= 3) {
+      bodyText = parts.slice(2).join(' - ').trim();
+      const commaIdx = bodyText.indexOf(',');
+      if (commaIdx >= 0) bodyText = bodyText.substring(commaIdx + 1).trim();
+    } else if (parts.length === 2) {
+      bodyText = parts[1].trim();
+    } else {
+      bodyText = text;
+    }
+  }
+  return {
+    title: parsed.common,
+    latin: parsed.scientific,
+    family: parsed.family || '',
+    text: bodyText,
+    details: []
+  };
+}
 
 function renderCollectionGallery(gallery, slug) {
   const content = document.getElementById('collection-detail-content');
   if (!content || !gallery) return;
   currentCollectionImages = [];
+  collectionPlantModalData = {};
   let imageIndex = 0;
-  const useBanner = slug === 'force-within';
   const blocks = gallery.blocks;
   const html = [];
   const bannerCards = [];
-  let forceWithinBannerIdx = 0;
+  let bannerIdx = 0;
   for (let i = 0; i < blocks.length; i++) {
     const block = blocks[i];
     if (block.type === 'image') {
       const idx = imageIndex++;
       const next = blocks[i + 1];
-      if (useBanner && next && next.type === 'text') {
-        const modalId = forceWithinModalIds[forceWithinBannerIdx++] || ('forcewithin-' + idx);
+      if (next && next.type === 'text') {
+        const modalId = 'collection-' + slug + '-' + bannerIdx;
+        collectionPlantModalData[modalId] = buildPlantModalEntryFromBanner(next.text);
         const parsed = parseForceWithinBanner(next.text);
         bannerCards.push('<div class="plant-card plant-clickable" onclick="openPlantModal(\'' + modalId + '\', event)" role="button" tabindex="0" onkeydown="if(event.key===\'Enter\')openPlantModal(\'' + modalId + '\', event)" aria-label="' + parsed.common + '">' +
           '<img src="' + block.src + '" alt="' + (block.alt || '') + '" loading="lazy">' +
           buildSanctuaryStyleBanner(next.text) + '</div>');
+        bannerIdx++;
         i++;
       } else {
         currentCollectionImages.push({ src: block.src, caption: block.caption || block.alt || '' });
@@ -1881,8 +1881,6 @@ function renderCollectionGallery(gallery, slug) {
         html.push('<button type="button" class="collection-gallery-image-wrap" onclick="openCollectionLightbox(' + idx + ')">' +
           '<img src="' + block.src + '" alt="' + (block.alt || '') + '" loading="lazy">' + credits + '</button>');
       }
-    } else if (block.type === 'text' && !useBanner) {
-      html.push('<p class="collection-gallery-text">' + block.text + '</p>');
     }
   }
   if (bannerCards.length) {
@@ -1905,8 +1903,7 @@ function openCollectionDetail(index) {
   renderCollectionRelated(index);
   document.getElementById('collection-index-view').classList.add('hidden');
   const detailView = document.getElementById('collection-detail-view');
-  detailView.classList.toggle('force-within-detail', item.slug === 'force-within');
-  detailView.classList.add('active');
+  detailView.classList.add('collection-banner-detail', 'active');
   window.scrollTo(0, 0);
 }
 
@@ -1915,7 +1912,7 @@ function closeCollectionDetail() {
   closePlantModal();
   document.getElementById('collection-index-view').classList.remove('hidden');
   const detailView = document.getElementById('collection-detail-view');
-  detailView.classList.remove('active', 'force-within-detail');
+  detailView.classList.remove('active', 'collection-banner-detail');
   currentCollectionIndex = -1;
   window.scrollTo(0, 0);
 }
