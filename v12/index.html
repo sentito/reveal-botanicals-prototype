@@ -300,6 +300,7 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 
 /* Collection page (prototype — mirrors revealbotanicals.com/work) */
 .collection-page { background: var(--deep-plum); color: #e8cef5; min-height: 100vh; }
+body.collection-active { background: var(--deep-plum); }
 .collection-masthead {
   text-align: center;
   padding: 110px 40px 70px;
@@ -629,10 +630,10 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
   color: #fff;
 }
 
-/* Option B: align Collection with main site palette (cream, plum, purple, gold) */
+/* Option B: align Collection cards/typography with main site palette — page bg stays deep-plum (footer) */
 .collection-page.collection-theme-site {
-  background: var(--warm-white);
-  color: var(--text-dark);
+  background: var(--deep-plum);
+  color: #e8cef5;
 }
 .collection-page.collection-theme-site .collection-theme-toggle > span { color: var(--text-light); }
 .collection-page.collection-theme-site .collection-theme-btn {
@@ -645,8 +646,8 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
   border-color: var(--purple);
   color: #fff;
 }
-.collection-page.collection-theme-site .collection-masthead h1 { color: var(--deep-plum); }
-.collection-page.collection-theme-site .collection-masthead p { color: var(--text-medium); }
+.collection-page.collection-theme-site .collection-masthead h1 { color: #f5f0fa; }
+.collection-page.collection-theme-site .collection-masthead p { color: #d5d2ff; }
 .collection-page.collection-theme-site .collection-masthead-btns a,
 .collection-page.collection-theme-site .collection-detail-actions a,
 .collection-page.collection-theme-site .collection-detail-actions button.collection-action-btn {
@@ -670,8 +671,8 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 .collection-page.collection-theme-site .collection-card-overlay { background: rgba(92,64,128,0.55); }
 .collection-page.collection-theme-site .collection-detail-back { color: var(--purple); }
 .collection-page.collection-theme-site .collection-detail-back:hover { color: var(--purple-dark); }
-.collection-page.collection-theme-site .collection-detail h2 { color: var(--deep-plum); }
-.collection-page.collection-theme-site .collection-detail-quote { color: var(--text-medium); }
+.collection-page.collection-theme-site .collection-detail h2 { color: #f5f0fa; }
+.collection-page.collection-theme-site .collection-detail-quote { color: #d5d2ff; }
 .collection-page.collection-theme-site .collection-detail-attrib { color: var(--gold); }
 .collection-page.collection-theme-site .collection-gallery-image-wrap img {
   border-radius: 8px;
@@ -680,7 +681,7 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 .collection-page.collection-theme-site .collection-gallery-credits { color: var(--text-light); }
 .collection-page.collection-theme-site .collection-gallery-text { color: var(--purple-dark); }
 .collection-page.collection-theme-site .collection-related { border-top-color: rgba(123,94,167,0.15); }
-.collection-page.collection-theme-site .collection-related h3 { color: var(--purple-dark); }
+.collection-page.collection-theme-site .collection-related h3 { color: #d5d2ff; }
 .collection-page.collection-theme-site .collection-related-card { background: var(--cream); border-radius: 6px; }
 </style>
 </head>
@@ -1714,6 +1715,8 @@ function navigateCollectionLightbox(direction) {
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + pageId).classList.add('active');
+  document.body.classList.toggle('collection-active', pageId === 'collection');
+  document.body.style.background = pageId === 'collection' ? 'var(--deep-plum)' : '';
   closePlantModal();
   closeCollectionLightbox();
   closeCollectionDetail();
