@@ -397,20 +397,6 @@ body.collection-active { background: var(--deep-plum); }
   text-align: center;
   line-height: 1.3;
 }
-/* EXPERIMENT: sanctuary-style label footer on select collection cards — revert via tag before-collection-label-experiment */
-.collection-card--sanctuary-label {
-  aspect-ratio: auto;
-  background: white;
-  display: flex;
-  flex-direction: column;
-}
-.collection-card--sanctuary-label img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-.collection-card--sanctuary-label:hover img { opacity: 1; }
 .collection-prototype-note {
   text-align: center;
   padding: 0 40px 24px;
@@ -1648,14 +1634,6 @@ function setCollectionTheme(theme) {
   const grid = document.getElementById('collection-grid');
   if (!grid) return;
   grid.innerHTML = collectionItems.map(function(item, i) {
-    if (item.slug === 'be-yourself') {
-      return '<button type="button" class="collection-card collection-card--sanctuary-label" onclick="openCollectionDetail(' + i + ')" aria-label="' + item.title + '">' +
-        '<img src="' + item.img + '" alt="' + item.title + '" loading="lazy">' +
-        '<div class="plant-card-label" style="text-align:center;">' +
-        '<strong style="color: var(--purple-dark);">Yarrow</strong>' +
-        '<p class="latin">Achillea millefolium</p>' +
-        '</div></button>';
-    }
     return '<button type="button" class="collection-card" onclick="openCollectionDetail(' + i + ')" aria-label="' + item.title + '">' +
       '<img src="' + item.img + '" alt="' + item.title + '" loading="lazy">' +
       '<span class="collection-card-overlay"><span class="collection-card-title">' + item.title + '</span></span>' +
