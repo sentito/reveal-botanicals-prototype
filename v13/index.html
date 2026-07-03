@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-03-v13-comfrey-migration-note -->
+<!-- deploy: 2026-07-03-v13-forcewithin-sanctuary-grid -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -488,27 +488,15 @@ body.collection-active { background: var(--deep-plum); }
 .collection-gallery-image-wrap--banner .plant-card-label { text-align: center; }
 .collection-gallery-image-wrap--banner.plant-clickable { cursor: pointer; transition: box-shadow 0.3s, transform 0.3s; }
 .collection-gallery-image-wrap--banner.plant-clickable:hover { box-shadow: 0 4px 20px rgba(123,94,167,0.15); transform: translateY(-2px); }
-.collection-forcewithin-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.collection-forcewithin-grid .collection-gallery-image-wrap--banner {
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-}
-.collection-forcewithin-grid .collection-gallery-image-wrap--banner img {
+.collection-gallery .sanctuary-garden {
   width: 100%;
+}
+.collection-gallery .sanctuary-garden .plant-card {
+  min-width: 0;
+}
+.collection-gallery .sanctuary-garden .plant-card > img {
   height: 220px;
   object-fit: cover;
-  display: block;
-}
-@media (max-width: 768px) {
-  .collection-forcewithin-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 480px) {
-  .collection-forcewithin-grid { grid-template-columns: 1fr; }
 }
 .collection-gallery-credits {
   font-size: 14px;
@@ -1837,7 +1825,7 @@ function renderCollectionGallery(gallery, slug) {
       if (useBanner && next && next.type === 'text') {
         const modalId = forceWithinModalIds[forceWithinBannerIdx++] || ('forcewithin-' + idx);
         const parsed = parseForceWithinBanner(next.text);
-        bannerCards.push('<div class="collection-gallery-image-wrap collection-gallery-image-wrap--banner plant-clickable" onclick="openPlantModal(\'' + modalId + '\', event)" role="button" tabindex="0" onkeydown="if(event.key===\'Enter\')openPlantModal(\'' + modalId + '\', event)" aria-label="' + parsed.common + '">' +
+        bannerCards.push('<div class="plant-card plant-clickable" onclick="openPlantModal(\'' + modalId + '\', event)" role="button" tabindex="0" onkeydown="if(event.key===\'Enter\')openPlantModal(\'' + modalId + '\', event)" aria-label="' + parsed.common + '">' +
           '<img src="' + block.src + '" alt="' + (block.alt || '') + '" loading="lazy">' +
           buildSanctuaryStyleBanner(next.text) + '</div>');
         i++;
@@ -1852,7 +1840,7 @@ function renderCollectionGallery(gallery, slug) {
     }
   }
   if (bannerCards.length) {
-    html.unshift('<div class="collection-forcewithin-grid">' + bannerCards.join('') + '</div>');
+    html.unshift('<div class="sanctuary-garden">' + bannerCards.join('') + '</div>');
   }
   content.innerHTML = html.join('');
 }
