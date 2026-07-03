@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-03-v13-forcewithin-cream-header -->
+<!-- deploy: 2026-07-03-v13-forcewithin-typography-ui -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -429,12 +429,12 @@ body.collection-active { background: var(--deep-plum); }
 .collection-detail-back {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   border: none;
   background: none;
   color: #c4a8e8;
   font-family: 'Raleway', sans-serif;
-  font-size: 14px;
+  font-size: 21px;
   cursor: pointer;
   margin-bottom: 32px;
   padding: 0;
@@ -461,6 +461,9 @@ body.collection-active { background: var(--deep-plum); }
 .collection-detail.force-within-detail h2,
 .collection-detail.force-within-detail .collection-detail-quote {
   color: var(--gold-light);
+}
+.collection-detail.force-within-detail .collection-detail-quote {
+  font-family: 'Sorts Mill Goudy', serif;
 }
 .collection-gallery { display: flex; flex-direction: column; gap: 52px; }
 .collection-gallery-image-wrap {
@@ -524,11 +527,12 @@ body.collection-active { background: var(--deep-plum); }
 .collection-detail-actions button.collection-action-btn {
   display: inline-block;
   padding: 12px 28px;
-  border: 1px solid rgba(232,206,245,0.45);
+  border: 2px solid rgba(232,206,245,0.85);
   background: none;
   color: #e8cef5;
   text-decoration: none;
   font-size: 13px;
+  font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   border-radius: 2px;
@@ -1176,12 +1180,6 @@ body.collection-active { background: var(--deep-plum); }
 
 <div class="page-label">COLLECTION &mdash; PROTOTYPE</div>
 
-<div class="collection-theme-toggle" id="collection-theme-toggle" aria-label="Collection color preview">
-  <span>Preview colors:</span>
-  <button type="button" class="collection-theme-btn active" id="collection-theme-original" onclick="setCollectionTheme('original')">Original (dark)</button>
-  <button type="button" class="collection-theme-btn" id="collection-theme-site" onclick="setCollectionTheme('site')">Match site (light)</button>
-</div>
-
 <div id="collection-index-view" class="collection-index-view">
   <div class="collection-masthead">
     <h1>Immerse Yourself in the Power of Plants</h1>
@@ -1724,22 +1722,7 @@ let currentCollectionIndex = -1;
 let currentCollectionImages = [];
 let currentLightboxIndex = -1;
 
-function setCollectionTheme(theme) {
-  const page = document.getElementById('page-collection');
-  const isSite = theme === 'site';
-  if (page) page.classList.toggle('collection-theme-site', isSite);
-  const btnOrig = document.getElementById('collection-theme-original');
-  const btnSite = document.getElementById('collection-theme-site');
-  if (btnOrig) btnOrig.classList.toggle('active', !isSite);
-  if (btnSite) btnSite.classList.toggle('active', isSite);
-  try { sessionStorage.setItem('collectionTheme', theme); } catch (e) {}
-}
 
-(function initCollectionTheme() {
-  let theme = 'original';
-  try { theme = sessionStorage.getItem('collectionTheme') || 'original'; } catch (e) {}
-  setCollectionTheme(theme);
-})();
 
 (function initCollectionGrid() {
   const grid = document.getElementById('collection-grid');
