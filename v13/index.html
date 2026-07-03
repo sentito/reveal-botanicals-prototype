@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-02-v13-experiments -->
+<!-- deploy: 2026-07-02-v13-forcewithin-popups -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -485,13 +485,8 @@ body.collection-active { background: var(--deep-plum); }
   box-shadow: none;
 }
 .collection-gallery-image-wrap--banner .plant-card-label { text-align: center; }
-.collection-banner-detail {
-  font-size: 12px;
-  color: var(--text-medium);
-  margin-top: 8px;
-  line-height: 1.55;
-  text-align: left;
-}
+.collection-gallery-image-wrap--banner.plant-clickable { cursor: pointer; transition: box-shadow 0.3s, transform 0.3s; }
+.collection-gallery-image-wrap--banner.plant-clickable:hover { box-shadow: 0 4px 20px rgba(123,94,167,0.15); transform: translateY(-2px); }
 .collection-gallery-credits {
   font-size: 14px;
   color: rgba(232,206,245,0.7);
@@ -1450,6 +1445,18 @@ const plantModalData = {
       ['Preparation:', 'Used both topically and internally; irritating hairs require careful preparation and seed removal'],
       ['Sanctuary note:', 'Photo and full profile coming soon']
     ]
+  },
+  'forcewithin-jack': {
+    title: 'Jack-In-the-Pulpit',
+    latin: 'Arisaema triphyllum',
+    text: 'Araceae Family, native to eastern US hardwood forests - my childhood introduction to the mysteries of native plants',
+    details: []
+  },
+  'forcewithin-skunk': {
+    title: 'Western Skunk Cabbage',
+    latin: 'Lysichiton americanus',
+    text: 'Araceae family, Pacific NW Native that shares some similarities to its eastern counterpart, Symplocarpus foetidus, which are classified in different genera. Both might be indicated only in very low amounts by skilled herbalists for relaxing the respiratory and musculosketetal tissues. This fresh wetland plant, as well as its cousin, Jack-in-the-Pulpit above, is high in calcium oxalates known as raphides that are particularly excoriating to the tissues, and may be fatal without correct and intentional processing for safe use. Their aroma is strong and skunk-like, attracting certain beneficial pollinators.',
+    details: []
   }
 };
 
@@ -1470,7 +1477,13 @@ function openPlantModal(plantId, evt) {
   document.getElementById('plant-modal-latin').textContent = data.latin;
   document.getElementById('plant-modal-text').innerHTML = data.text;
   const list = document.getElementById('plant-modal-list');
-  list.innerHTML = data.details.map(function(d) { return '<li><strong>' + d[0] + '</strong> ' + d[1] + '</li>'; }).join('');
+  if (data.details && data.details.length) {
+    list.innerHTML = data.details.map(function(d) { return '<li><strong>' + d[0] + '</strong> ' + d[1] + '</li>'; }).join('');
+    list.style.display = '';
+  } else {
+    list.innerHTML = '';
+    list.style.display = 'none';
+  }
   document.getElementById('plant-modal').hidden = false;
   document.body.style.overflow = 'hidden';
 }
@@ -1701,19 +1714,25 @@ function renderCollectionRelated(currentIndex) {
   }).join('');
 }
 
+function parseForceWithinBanner(text) {
+  const parts = text.split(' - ');
+  const scientific = (parts[0] || '').trim();
+  let common = (parts[1] || scientific).trim();
+  const commaIdx = common.indexOf(',');
+  if (commaIdx >= 0) common = common.substring(0, commaIdx).trim();
+  return { scientific: scientific, common: common };
+}
+
 function buildSanctuaryStyleBanner(text) {
   if (!text) return '';
-  const parts = text.split(' - ');
-  const scientific = parts[0] || '';
-  const common = parts[1] || scientific;
-  const detail = parts.slice(2).join(' - ');
-  let html = '<div class="plant-card-label">';
-  html += '<strong style="color: var(--purple-dark);">' + common + '</strong>';
-  html += '<p class="latin">' + scientific + '</p>';
-  if (detail) html += '<p class="collection-banner-detail">' + detail + '</p>';
-  html += '</div>';
-  return html;
+  const parsed = parseForceWithinBanner(text);
+  return '<div class="plant-card-label">' +
+    '<strong style="color: var(--purple-dark);">' + parsed.common + '</strong>' +
+    '<p class="latin">' + parsed.scientific + '</p>' +
+    '</div>';
 }
+
+const forceWithinModalIds = ['forcewithin-jack', 'forcewithin-skunk'];
 
 function renderCollectionGallery(gallery, slug) {
   const content = document.getElementById('collection-detail-content');
@@ -1723,18 +1742,21 @@ function renderCollectionGallery(gallery, slug) {
   const useBanner = slug === 'force-within';
   const blocks = gallery.blocks;
   const html = [];
+  let forceWithinBannerIdx = 0;
   for (let i = 0; i < blocks.length; i++) {
     const block = blocks[i];
     if (block.type === 'image') {
       const idx = imageIndex++;
-      currentCollectionImages.push({ src: block.src, caption: block.caption || block.alt || '' });
       const next = blocks[i + 1];
       if (useBanner && next && next.type === 'text') {
-        html.push('<button type="button" class="collection-gallery-image-wrap collection-gallery-image-wrap--banner" onclick="openCollectionLightbox(' + idx + ')">' +
+        const modalId = forceWithinModalIds[forceWithinBannerIdx++] || ('forcewithin-' + idx);
+        const parsed = parseForceWithinBanner(next.text);
+        html.push('<div class="collection-gallery-image-wrap collection-gallery-image-wrap--banner plant-clickable" onclick="openPlantModal(\'' + modalId + '\', event)" role="button" tabindex="0" onkeydown="if(event.key===\'Enter\')openPlantModal(\'' + modalId + '\', event)" aria-label="' + parsed.common + '">' +
           '<img src="' + block.src + '" alt="' + (block.alt || '') + '" loading="lazy">' +
-          buildSanctuaryStyleBanner(next.text) + '</button>');
+          buildSanctuaryStyleBanner(next.text) + '</div>');
         i++;
       } else {
+        currentCollectionImages.push({ src: block.src, caption: block.caption || block.alt || '' });
         const credits = block.caption ? '<p class="collection-gallery-credits">' + block.caption + '</p>' : '';
         html.push('<button type="button" class="collection-gallery-image-wrap" onclick="openCollectionLightbox(' + idx + ')">' +
           '<img src="' + block.src + '" alt="' + (block.alt || '') + '" loading="lazy">' + credits + '</button>');
