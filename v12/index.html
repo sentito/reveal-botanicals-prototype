@@ -215,6 +215,7 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 .sanctuary-garden { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1000px; margin: 0 auto; }
 .plant-card { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); background: white; }
 .sanctuary-garden .plant-card > img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.plant-card-placeholder { width: 100%; height: 220px; display: flex; align-items: center; justify-content: center; background: var(--gold-light); color: var(--text-light); font-size: 13px; }
 .plant-accordion { transition: box-shadow 0.3s; }
 .plant-accordion:hover { box-shadow: 0 4px 20px rgba(123,94,167,0.15); }
 .plant-accordion-trigger { width: 100%; border: none; background: none; padding: 0; cursor: pointer; text-align: center; font-family: inherit; display: block; }
@@ -1041,25 +1042,7 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 
 <section class="section-alt" style="padding: 60px 40px;">
   <div style="max-width: 1200px; margin: 0 auto;">
-    <div class="cards-3">
-      <div class="card" style="text-align: left;">
-        <h3>🌿 Baikal Skullcap</h3>
-        <p>Anti-inflammatory powerhouse with a deep tradition in Chinese medicine. Supports immune modulation and respiratory health.</p>
-      </div>
-      <div class="card" style="text-align: left;">
-        <h3>🌿 Comfrey</h3>
-        <p>Known as "knitbone" for its remarkable ability to support tissue repair. Used topically for joint and muscle support.</p>
-      </div>
-      <div class="card" style="text-align: left;">
-        <h3>🌿 Wild Rose</h3>
-        <p>Rich in vitamin C and antioxidants. Traditional use for immune support, skin health, and gentle mood enhancement.</p>
-      </div>
-      <div class="card" style="text-align: left;">
-        <h3>🌿 Solomon's Seal</h3>
-        <p>Valued for musculoskeletal support &mdash; joints, tendons, and connective tissue. A woodland ally for structural resilience.</p>
-      </div>
-    </div>
-    <div id="sanctuary-garden-section" style="margin-top: 50px;">
+    <div id="sanctuary-garden-section">
       <h3 style="text-align: center; font-family: 'Sorts Mill Goudy', serif; color: var(--purple-dark); margin-bottom: 30px;">From the Sanctuary Garden</h3>
       <div class="sanctuary-garden">
         <div class="plant-card plant-clickable" onclick="openPlantModal('goldenrod', event)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openPlantModal('goldenrod', event)">
@@ -1095,6 +1078,20 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
           <div class="plant-card-label" style="text-align:center;">
             <strong style="color: var(--purple-dark);">Wildflower Meadow</strong>
             <p class="latin">Pacific Northwest natives</p>
+          </div>
+        </div>
+        <div class="plant-card plant-clickable" onclick="openPlantModal('wildrose', event)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openPlantModal('wildrose', event)">
+          <div class="plant-card-placeholder">Photo coming soon</div>
+          <div class="plant-card-label" style="text-align:center;">
+            <strong style="color: var(--purple-dark);">Wild Rose</strong>
+            <p class="latin">Rosa spp.</p>
+          </div>
+        </div>
+        <div class="plant-card plant-clickable" onclick="openPlantModal('rosehips', event)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openPlantModal('rosehips', event)">
+          <div class="plant-card-placeholder">Photo coming soon</div>
+          <div class="plant-card-label" style="text-align:center;">
+            <strong style="color: var(--purple-dark);">Rose Hips</strong>
+            <p class="latin">Rosa spp.</p>
           </div>
         </div>
       </div>
@@ -1388,6 +1385,26 @@ const plantModalData = {
       ['Traditional use:', 'Topical poultices and salves for joint and muscle support'],
       ['Sanctuary note:', 'Grown for external preparations; internal use requires professional guidance']
     ]
+  },
+  wildrose: {
+    title: 'Wild Rose',
+    latin: 'Rosa spp.',
+    text: 'Rich in vitamin C and antioxidants. Traditional use for immune support, skin health, and gentle mood enhancement.',
+    details: [
+      ['In the garden:', 'Native and cultivated roses throughout the sanctuary borders'],
+      ['Traditional use:', 'Immune support, skin health, and gentle mood enhancement'],
+      ['Sanctuary note:', 'Photo and full profile coming soon']
+    ]
+  },
+  rosehips: {
+    title: 'Rose Hips',
+    latin: 'Rosa spp.',
+    text: 'Several native species of Rosa are found in the Pacific NW, including Nootka, Pearfruit, and Bald Hip. They are all very rich in polyphenol antioxidants, combatting free radicals, are neuro-protective and chronic inflammation reducing in regards to stress-metabolic syndromes. Rose Hips are mucilaginous, moistening the tissues, as well as tannin containing, toning the tissues, so they have a multi-faceted profile that is quite unique.',
+    details: [
+      ['Constituents:', 'Tart pulp rich in Vitamin C and synergistic bioflavonoids'],
+      ['Preparation:', 'Used both topically and internally; irritating hairs require careful preparation and seed removal'],
+      ['Sanctuary note:', 'Photo and full profile coming soon']
+    ]
   }
 };
 
@@ -1395,8 +1412,15 @@ function openPlantModal(plantId, evt) {
   const data = plantModalData[plantId];
   if (!data) return;
   const imgEl = evt.currentTarget.querySelector('img');
-  document.getElementById('plant-modal-img').src = imgEl ? imgEl.src : '';
-  document.getElementById('plant-modal-img').alt = data.title;
+  const modalImg = document.getElementById('plant-modal-img');
+  if (imgEl && imgEl.src) {
+    modalImg.src = imgEl.src;
+    modalImg.alt = data.title;
+    modalImg.style.display = 'block';
+  } else {
+    modalImg.src = '';
+    modalImg.style.display = 'none';
+  }
   document.getElementById('plant-modal-title').textContent = data.title;
   document.getElementById('plant-modal-latin').textContent = data.latin;
   document.getElementById('plant-modal-text').innerHTML = data.text;
