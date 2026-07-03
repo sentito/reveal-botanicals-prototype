@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-02-v13-forcewithin-popups -->
+<!-- deploy: 2026-07-03-v13-forcewithin-modal-fix -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -223,6 +223,7 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 .plant-card-label { padding: 12px 12px 10px; background: var(--gold-light); position: relative; }
 .plant-card-label strong { color: var(--purple-dark); display: block; }
 .plant-card-label .latin { font-size: 12px; color: var(--text-light); margin-top: 4px; }
+.plant-card-label .family { font-size: 12px; color: var(--text-light); margin-top: 2px; font-style: italic; }
 .plant-accordion-hint { font-size: 11px; color: var(--gold); margin-top: 6px; display: block; font-weight: 500; letter-spacing: 0.3px; }
 .plant-accordion-chevron { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--purple); font-size: 18px; transition: transform 0.3s; line-height: 1; }
 .plant-accordion.expanded .plant-accordion-chevron { transform: translateY(-50%) rotate(180deg); }
@@ -1136,21 +1137,6 @@ body.collection-active { background: var(--deep-plum); }
         </div>
       </div>
     </div>
-    <div id="plant-modal" class="plant-modal" hidden>
-      <div class="plant-modal-backdrop" onclick="closePlantModal()"></div>
-      <div class="plant-modal-box">
-        <button type="button" class="plant-modal-close" onclick="closePlantModal()" aria-label="Close">&times;</button>
-        <img id="plant-modal-img" class="plant-modal-img" src="" alt="">
-        <div class="plant-modal-body">
-          <span class="plant-modal-label">Popup</span>
-          <h4 id="plant-modal-title" style="font-family:'Sorts Mill Goudy',serif;font-size:24px;color:var(--purple-dark);margin-bottom:8px;"></h4>
-          <p id="plant-modal-latin" style="font-size:14px;color:var(--text-light);margin-bottom:14px;"></p>
-          <p id="plant-modal-text" style="font-size:14px;color:var(--text-medium);line-height:1.7;margin-bottom:14px;"></p>
-          <ul id="plant-modal-list" class="plant-detail-list"></ul>
-        </div>
-      </div>
-    </div>
-
     <p style="text-align: center; margin-top: 30px; color: var(--text-light); font-size: 14px;">More plant profiles coming soon &mdash; from Carol's mountainside garden.</p>
   </div>
 </section>
@@ -1371,6 +1357,21 @@ body.collection-active { background: var(--deep-plum); }
   </div>
 </footer>
 
+<div id="plant-modal" class="plant-modal" hidden>
+  <div class="plant-modal-backdrop" onclick="closePlantModal()"></div>
+  <div class="plant-modal-box">
+    <button type="button" class="plant-modal-close" onclick="closePlantModal()" aria-label="Close">&times;</button>
+    <img id="plant-modal-img" class="plant-modal-img" src="" alt="">
+    <div class="plant-modal-body">
+      <span class="plant-modal-label">Popup</span>
+      <h4 id="plant-modal-title" style="font-family:'Sorts Mill Goudy',serif;font-size:24px;color:var(--purple-dark);margin-bottom:8px;"></h4>
+      <p id="plant-modal-latin" style="font-size:14px;color:var(--text-light);margin-bottom:14px;"></p>
+      <p id="plant-modal-text" style="font-size:14px;color:var(--text-medium);line-height:1.7;margin-bottom:14px;"></p>
+      <ul id="plant-modal-list" class="plant-detail-list"></ul>
+    </div>
+  </div>
+</div>
+
 <script>
 const plantModalData = {
   goldenrod: {
@@ -1449,13 +1450,15 @@ const plantModalData = {
   'forcewithin-jack': {
     title: 'Jack-In-the-Pulpit',
     latin: 'Arisaema triphyllum',
-    text: 'Araceae Family, native to eastern US hardwood forests - my childhood introduction to the mysteries of native plants',
+    family: 'Araceae Family',
+    text: 'Native to eastern US hardwood forests - my childhood introduction to the mysteries of native plants',
     details: []
   },
   'forcewithin-skunk': {
     title: 'Western Skunk Cabbage',
     latin: 'Lysichiton americanus',
-    text: 'Araceae family, Pacific NW Native that shares some similarities to its eastern counterpart, Symplocarpus foetidus, which are classified in different genera. Both might be indicated only in very low amounts by skilled herbalists for relaxing the respiratory and musculosketetal tissues. This fresh wetland plant, as well as its cousin, Jack-in-the-Pulpit above, is high in calcium oxalates known as raphides that are particularly excoriating to the tissues, and may be fatal without correct and intentional processing for safe use. Their aroma is strong and skunk-like, attracting certain beneficial pollinators.',
+    family: 'Araceae family',
+    text: 'Pacific NW Native that shares some similarities to its eastern counterpart, Symplocarpus foetidus, which are classified in different genera. Both might be indicated only in very low amounts by skilled herbalists for relaxing the respiratory and musculosketetal tissues. This fresh wetland plant, as well as its cousin, Jack-in-the-Pulpit above, is high in calcium oxalates known as raphides that are particularly excoriating to the tissues, and may be fatal without correct and intentional processing for safe use. Their aroma is strong and skunk-like, attracting certain beneficial pollinators.',
     details: []
   }
 };
@@ -1474,7 +1477,8 @@ function openPlantModal(plantId, evt) {
     modalImg.style.display = 'none';
   }
   document.getElementById('plant-modal-title').textContent = data.title;
-  document.getElementById('plant-modal-latin').textContent = data.latin;
+  const latinEl = document.getElementById('plant-modal-latin');
+  latinEl.textContent = data.family ? data.latin + ' \u2014 ' + data.family : data.latin;
   document.getElementById('plant-modal-text').innerHTML = data.text;
   const list = document.getElementById('plant-modal-list');
   if (data.details && data.details.length) {
@@ -1717,18 +1721,37 @@ function renderCollectionRelated(currentIndex) {
 function parseForceWithinBanner(text) {
   const parts = text.split(' - ');
   const scientific = (parts[0] || '').trim();
-  let common = (parts[1] || scientific).trim();
-  const commaIdx = common.indexOf(',');
-  if (commaIdx >= 0) common = common.substring(0, commaIdx).trim();
-  return { scientific: scientific, common: common };
+  if (parts.length >= 3) {
+    const common = (parts[1] || scientific).trim();
+    const remainder = parts.slice(2).join(' - ');
+    const commaIdx = remainder.indexOf(',');
+    if (commaIdx >= 0) {
+      return {
+        scientific: scientific,
+        common: common,
+        family: remainder.substring(0, commaIdx).trim(),
+        description: remainder.substring(commaIdx + 1).trim()
+      };
+    }
+    return { scientific: scientific, common: common, family: remainder, description: '' };
+  }
+  const segments = (parts[1] || scientific).split(',').map(function(s) { return s.trim(); });
+  return {
+    scientific: scientific,
+    common: segments[0] || scientific,
+    family: segments[1] || '',
+    description: segments.slice(2).join(', ').trim()
+  };
 }
 
 function buildSanctuaryStyleBanner(text) {
   if (!text) return '';
   const parsed = parseForceWithinBanner(text);
+  const familyLine = parsed.family ? '<p class="family">' + parsed.family + '</p>' : '';
   return '<div class="plant-card-label">' +
     '<strong style="color: var(--purple-dark);">' + parsed.common + '</strong>' +
     '<p class="latin">' + parsed.scientific + '</p>' +
+    familyLine +
     '</div>';
 }
 
