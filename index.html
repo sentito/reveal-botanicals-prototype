@@ -473,6 +473,25 @@ body.collection-active { background: var(--deep-plum); }
   border-radius: 2px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.3);
 }
+/* EXPERIMENT: sanctuary-style banner on collection detail images (force-within) */
+.collection-gallery-image-wrap--banner {
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.collection-gallery-image-wrap--banner img {
+  border-radius: 0;
+  box-shadow: none;
+}
+.collection-gallery-image-wrap--banner .plant-card-label { text-align: center; }
+.collection-banner-detail {
+  font-size: 12px;
+  color: var(--text-medium);
+  margin-top: 8px;
+  line-height: 1.55;
+  text-align: left;
+}
 .collection-gallery-credits {
   font-size: 14px;
   color: rgba(232,206,245,0.7);
@@ -1682,21 +1701,49 @@ function renderCollectionRelated(currentIndex) {
   }).join('');
 }
 
-function renderCollectionGallery(gallery) {
+function buildSanctuaryStyleBanner(text) {
+  if (!text) return '';
+  const parts = text.split(' - ');
+  const scientific = parts[0] || '';
+  const common = parts[1] || scientific;
+  const detail = parts.slice(2).join(' - ');
+  let html = '<div class="plant-card-label">';
+  html += '<strong style="color: var(--purple-dark);">' + common + '</strong>';
+  html += '<p class="latin">' + scientific + '</p>';
+  if (detail) html += '<p class="collection-banner-detail">' + detail + '</p>';
+  html += '</div>';
+  return html;
+}
+
+function renderCollectionGallery(gallery, slug) {
   const content = document.getElementById('collection-detail-content');
   if (!content || !gallery) return;
   currentCollectionImages = [];
   let imageIndex = 0;
-  content.innerHTML = gallery.blocks.map(function(block) {
+  const useBanner = slug === 'force-within';
+  const blocks = gallery.blocks;
+  const html = [];
+  for (let i = 0; i < blocks.length; i++) {
+    const block = blocks[i];
     if (block.type === 'image') {
       const idx = imageIndex++;
       currentCollectionImages.push({ src: block.src, caption: block.caption || block.alt || '' });
-      const credits = block.caption ? '<p class="collection-gallery-credits">' + block.caption + '</p>' : '';
-      return '<button type="button" class="collection-gallery-image-wrap" onclick="openCollectionLightbox(' + idx + ')">' +
-        '<img src="' + block.src + '" alt="' + (block.alt || '') + '" loading="lazy">' + credits + '</button>';
+      const next = blocks[i + 1];
+      if (useBanner && next && next.type === 'text') {
+        html.push('<button type="button" class="collection-gallery-image-wrap collection-gallery-image-wrap--banner" onclick="openCollectionLightbox(' + idx + ')">' +
+          '<img src="' + block.src + '" alt="' + (block.alt || '') + '" loading="lazy">' +
+          buildSanctuaryStyleBanner(next.text) + '</button>');
+        i++;
+      } else {
+        const credits = block.caption ? '<p class="collection-gallery-credits">' + block.caption + '</p>' : '';
+        html.push('<button type="button" class="collection-gallery-image-wrap" onclick="openCollectionLightbox(' + idx + ')">' +
+          '<img src="' + block.src + '" alt="' + (block.alt || '') + '" loading="lazy">' + credits + '</button>');
+      }
+    } else if (block.type === 'text' && !useBanner) {
+      html.push('<p class="collection-gallery-text">' + block.text + '</p>');
     }
-    return '<p class="collection-gallery-text">' + block.text + '</p>';
-  }).join('');
+  }
+  content.innerHTML = html.join('');
 }
 
 function openCollectionDetail(index) {
@@ -1709,7 +1756,7 @@ function openCollectionDetail(index) {
   const attribEl = document.getElementById('collection-detail-attribution');
   attribEl.textContent = gallery.attribution || '';
   attribEl.style.display = gallery.attribution ? 'block' : 'none';
-  renderCollectionGallery(gallery);
+  renderCollectionGallery(gallery, item.slug);
   renderCollectionRelated(index);
   document.getElementById('collection-index-view').classList.add('hidden');
   document.getElementById('collection-detail-view').classList.add('active');
