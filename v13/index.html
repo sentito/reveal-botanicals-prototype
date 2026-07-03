@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-03-v13-forcewithin-modal-fix -->
+<!-- deploy: 2026-07-03-v13-collection-plant-modal -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -252,10 +252,10 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 .plant-demo-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--purple); font-weight: 600; margin-top: 6px; display: block; }
 
 /* Option 2: Modal popup (Yarrow) */
-.plant-modal { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.plant-modal { position: fixed; inset: 0; z-index: 500; display: flex; align-items: center; justify-content: center; padding: 24px; }
 .plant-modal[hidden] { display: none !important; }
-.plant-modal-backdrop { position: absolute; inset: 0; background: rgba(45,36,56,0.55); backdrop-filter: blur(4px); }
-.plant-modal-box { position: relative; background: white; border-radius: 16px; max-width: 640px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(45,36,56,0.25); animation: modalIn 0.3s ease; }
+.plant-modal-backdrop { position: absolute; inset: 0; background: rgba(45,36,56,0.55); z-index: 0; }
+.plant-modal-box { position: relative; z-index: 1; background: white; border-radius: 16px; max-width: 640px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(45,36,56,0.25); animation: modalIn 0.3s ease; }
 @keyframes modalIn { from { opacity: 0; transform: scale(0.95) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
 .plant-modal-img { width: 100%; height: 240px; object-fit: cover; display: block; border-radius: 16px 16px 0 0; }
 .plant-modal-body { padding: 28px 32px 32px; text-align: left; }
@@ -1141,6 +1141,21 @@ body.collection-active { background: var(--deep-plum); }
   </div>
 </section>
 
+<div id="sanctuary-plant-modal" class="plant-modal" hidden>
+  <div class="plant-modal-backdrop" onclick="closePlantModal()"></div>
+  <div class="plant-modal-box">
+    <button type="button" class="plant-modal-close" onclick="closePlantModal()" aria-label="Close">&times;</button>
+    <img id="sanctuary-plant-modal-img" class="plant-modal-img" src="" alt="">
+    <div class="plant-modal-body">
+      <span class="plant-modal-label">Popup</span>
+      <h4 id="sanctuary-plant-modal-title" style="font-family:'Sorts Mill Goudy',serif;font-size:24px;color:var(--purple-dark);margin-bottom:8px;"></h4>
+      <p id="sanctuary-plant-modal-latin" style="font-size:14px;color:var(--text-light);margin-bottom:14px;"></p>
+      <p id="sanctuary-plant-modal-text" style="font-size:14px;color:var(--text-medium);line-height:1.7;margin-bottom:14px;"></p>
+      <ul id="sanctuary-plant-modal-list" class="plant-detail-list"></ul>
+    </div>
+  </div>
+</div>
+
 </div>
 
 <!-- ============================================ -->
@@ -1198,6 +1213,21 @@ body.collection-active { background: var(--deep-plum); }
   <div class="collection-lightbox-inner">
     <img id="collection-lightbox-img" src="" alt="">
     <p id="collection-lightbox-caption" class="collection-lightbox-caption"></p>
+  </div>
+</div>
+
+<div id="collection-plant-modal" class="plant-modal" hidden>
+  <div class="plant-modal-backdrop" onclick="closePlantModal()"></div>
+  <div class="plant-modal-box">
+    <button type="button" class="plant-modal-close" onclick="closePlantModal()" aria-label="Close">&times;</button>
+    <img id="collection-plant-modal-img" class="plant-modal-img" src="" alt="">
+    <div class="plant-modal-body">
+      <span class="plant-modal-label">Popup</span>
+      <h4 id="collection-plant-modal-title" style="font-family:'Sorts Mill Goudy',serif;font-size:24px;color:var(--purple-dark);margin-bottom:8px;"></h4>
+      <p id="collection-plant-modal-latin" style="font-size:14px;color:var(--text-light);margin-bottom:14px;"></p>
+      <p id="collection-plant-modal-text" style="font-size:14px;color:var(--text-medium);line-height:1.7;margin-bottom:14px;"></p>
+      <ul id="collection-plant-modal-list" class="plant-detail-list"></ul>
+    </div>
   </div>
 </div>
 
@@ -1357,21 +1387,6 @@ body.collection-active { background: var(--deep-plum); }
   </div>
 </footer>
 
-<div id="plant-modal" class="plant-modal" hidden>
-  <div class="plant-modal-backdrop" onclick="closePlantModal()"></div>
-  <div class="plant-modal-box">
-    <button type="button" class="plant-modal-close" onclick="closePlantModal()" aria-label="Close">&times;</button>
-    <img id="plant-modal-img" class="plant-modal-img" src="" alt="">
-    <div class="plant-modal-body">
-      <span class="plant-modal-label">Popup</span>
-      <h4 id="plant-modal-title" style="font-family:'Sorts Mill Goudy',serif;font-size:24px;color:var(--purple-dark);margin-bottom:8px;"></h4>
-      <p id="plant-modal-latin" style="font-size:14px;color:var(--text-light);margin-bottom:14px;"></p>
-      <p id="plant-modal-text" style="font-size:14px;color:var(--text-medium);line-height:1.7;margin-bottom:14px;"></p>
-      <ul id="plant-modal-list" class="plant-detail-list"></ul>
-    </div>
-  </div>
-</div>
-
 <script>
 const plantModalData = {
   goldenrod: {
@@ -1463,11 +1478,25 @@ const plantModalData = {
   }
 };
 
+function getActivePlantModalPrefix() {
+  return document.getElementById('page-collection').classList.contains('active')
+    ? 'collection-plant-modal'
+    : 'sanctuary-plant-modal';
+}
+
+function isPlantModalOpen() {
+  return !document.getElementById('sanctuary-plant-modal').hidden ||
+    !document.getElementById('collection-plant-modal').hidden;
+}
+
 function openPlantModal(plantId, evt) {
   const data = plantModalData[plantId];
   if (!data) return;
-  const imgEl = evt.currentTarget.querySelector('img');
-  const modalImg = document.getElementById('plant-modal-img');
+  if (evt && evt.preventDefault) evt.preventDefault();
+  const prefix = getActivePlantModalPrefix();
+  const trigger = evt && evt.currentTarget ? evt.currentTarget : null;
+  const imgEl = trigger ? trigger.querySelector('img') : null;
+  const modalImg = document.getElementById(prefix + '-img');
   if (imgEl && imgEl.src) {
     modalImg.src = imgEl.src;
     modalImg.alt = data.title;
@@ -1476,11 +1505,11 @@ function openPlantModal(plantId, evt) {
     modalImg.src = '';
     modalImg.style.display = 'none';
   }
-  document.getElementById('plant-modal-title').textContent = data.title;
-  const latinEl = document.getElementById('plant-modal-latin');
+  document.getElementById(prefix + '-title').textContent = data.title;
+  const latinEl = document.getElementById(prefix + '-latin');
   latinEl.textContent = data.family ? data.latin + ' \u2014 ' + data.family : data.latin;
-  document.getElementById('plant-modal-text').innerHTML = data.text;
-  const list = document.getElementById('plant-modal-list');
+  document.getElementById(prefix + '-text').innerHTML = data.text;
+  const list = document.getElementById(prefix + '-list');
   if (data.details && data.details.length) {
     list.innerHTML = data.details.map(function(d) { return '<li><strong>' + d[0] + '</strong> ' + d[1] + '</li>'; }).join('');
     list.style.display = '';
@@ -1488,19 +1517,21 @@ function openPlantModal(plantId, evt) {
     list.innerHTML = '';
     list.style.display = 'none';
   }
-  document.getElementById('plant-modal').hidden = false;
+  document.getElementById(prefix).hidden = false;
   document.body.style.overflow = 'hidden';
 }
 
 function closePlantModal() {
-  document.getElementById('plant-modal').hidden = true;
+  document.getElementById('sanctuary-plant-modal').hidden = true;
+  document.getElementById('collection-plant-modal').hidden = true;
+  if (!document.getElementById('collection-lightbox').hidden) return;
   document.body.style.overflow = '';
 }
 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     if (!document.getElementById('collection-lightbox').hidden) closeCollectionLightbox();
-    else closePlantModal();
+    else if (isPlantModalOpen()) closePlantModal();
   }
   if (!document.getElementById('collection-lightbox').hidden) {
     if (e.key === 'ArrowLeft') navigateCollectionLightbox(-1);
@@ -1810,6 +1841,7 @@ function openCollectionDetail(index) {
 
 function closeCollectionDetail() {
   closeCollectionLightbox();
+  closePlantModal();
   document.getElementById('collection-index-view').classList.remove('hidden');
   document.getElementById('collection-detail-view').classList.remove('active');
   currentCollectionIndex = -1;
@@ -1829,7 +1861,7 @@ function openCollectionLightbox(imageIndex) {
 
 function closeCollectionLightbox() {
   document.getElementById('collection-lightbox').hidden = true;
-  if (!document.getElementById('plant-modal').hidden) return;
+  if (isPlantModalOpen()) return;
   document.body.style.overflow = '';
 }
 
