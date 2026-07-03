@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-03-v13-modal-cream-background -->
+<!-- deploy: 2026-07-03-v13-forcewithin-cream-header -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -458,6 +458,10 @@ body.collection-active { background: var(--deep-plum); }
   margin-right: auto;
 }
 .collection-detail-attrib { font-size: 18px; color: #c4a8e8; margin: 0; }
+.collection-detail.force-within-detail h2,
+.collection-detail.force-within-detail .collection-detail-quote {
+  color: var(--gold-light);
+}
 .collection-gallery { display: flex; flex-direction: column; gap: 52px; }
 .collection-gallery-image-wrap {
   cursor: zoom-in;
@@ -723,6 +727,10 @@ body.collection-active { background: var(--deep-plum); }
 .collection-page.collection-theme-site .collection-detail-back:hover { color: var(--purple-dark); }
 .collection-page.collection-theme-site .collection-detail h2 { color: #f5f0fa; }
 .collection-page.collection-theme-site .collection-detail-quote { color: #d5d2ff; }
+.collection-page.collection-theme-site .collection-detail.force-within-detail h2,
+.collection-page.collection-theme-site .collection-detail.force-within-detail .collection-detail-quote {
+  color: var(--gold-light);
+}
 .collection-page.collection-theme-site .collection-detail-attrib { color: var(--gold); }
 .collection-page.collection-theme-site .collection-gallery-image-wrap img {
   border-radius: 8px;
@@ -1856,7 +1864,9 @@ function openCollectionDetail(index) {
   renderCollectionGallery(gallery, item.slug);
   renderCollectionRelated(index);
   document.getElementById('collection-index-view').classList.add('hidden');
-  document.getElementById('collection-detail-view').classList.add('active');
+  const detailView = document.getElementById('collection-detail-view');
+  detailView.classList.toggle('force-within-detail', item.slug === 'force-within');
+  detailView.classList.add('active');
   window.scrollTo(0, 0);
 }
 
@@ -1864,7 +1874,8 @@ function closeCollectionDetail() {
   closeCollectionLightbox();
   closePlantModal();
   document.getElementById('collection-index-view').classList.remove('hidden');
-  document.getElementById('collection-detail-view').classList.remove('active');
+  const detailView = document.getElementById('collection-detail-view');
+  detailView.classList.remove('active', 'force-within-detail');
   currentCollectionIndex = -1;
   window.scrollTo(0, 0);
 }
