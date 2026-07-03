@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-03-v13-all-collection-banner-galleries -->
+<!-- deploy: 2026-07-03-v13-banner-fill-fix -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -267,9 +267,15 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 }
 
 
-.sanctuary-garden { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1000px; margin: 0 auto; }
+.sanctuary-garden { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1000px; margin: 0 auto; align-items: stretch; }
 .plant-card { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); background: white; }
-.sanctuary-garden .plant-card > img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.sanctuary-garden .plant-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--gold-light);
+}
+.sanctuary-garden .plant-card > img { width: 100%; height: 220px; object-fit: cover; display: block; flex-shrink: 0; }
+.sanctuary-garden .plant-card .plant-card-label { flex: 1; width: 100%; box-sizing: border-box; }
 .plant-card-placeholder { width: 100%; height: 220px; display: flex; align-items: center; justify-content: center; background: var(--purple-light); color: var(--text-light); font-size: 13px; }
 .plant-accordion { transition: box-shadow 0.3s; }
 .plant-accordion:hover { box-shadow: 0 4px 20px rgba(123,94,167,0.15); }
