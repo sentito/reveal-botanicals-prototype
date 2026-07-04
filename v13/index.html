@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-04-v13-collection-masthead-goudy -->
+<!-- deploy: 2026-07-04-v13-collection-scroll-hint-removed -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -401,16 +401,6 @@ body.collection-active { background: var(--deep-plum); }
   transition: background 0.2s, color 0.2s;
 }
 .collection-masthead-btns a:hover { background: rgba(232,206,245,0.12); color: #fff; }
-.collection-scroll-hint {
-  margin-top: 40px;
-  color: rgba(232,206,245,0.5);
-  font-size: 22px;
-  animation: collectionBounce 2s ease infinite;
-}
-@keyframes collectionBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
-}
 .collection-grid-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px 80px; }
 .collection-grid {
   display: grid;
@@ -778,7 +768,6 @@ body.collection-active { background: var(--deep-plum); }
   background: var(--purple-light);
   color: var(--purple-dark);
 }
-.collection-page.collection-theme-site .collection-scroll-hint { color: var(--purple); opacity: 0.45; }
 .collection-page.collection-theme-site .collection-prototype-note { color: var(--text-light); }
 .collection-page.collection-theme-site .collection-grid { gap: 12px; }
 .collection-page.collection-theme-site .collection-card {
@@ -1247,7 +1236,6 @@ body.collection-active { background: var(--deep-plum); }
     <h1>Immerse Yourself in the Power of Plants</h1>
     <p>Each plant in the Sanctuary Garden has distinct characteristics that reveal themselves through growing habits, seasonal manifestations, and the remedies offered. These pages are a living guide to a small, local representation of the botanicals that we use in our practice for wellness support, always ethically and respectfully harvested.</p>
     <p>To explore a representative collection of Botanicals &amp; Fungi, click on the photos below.</p>
-    <div class="collection-scroll-hint" aria-hidden="true">&#9662;</div>
   </div>
   <p class="collection-prototype-note">Full botanical galleries from revealbotanicals.com &mdash; click any collection to explore.</p>
   <div class="collection-grid-wrap">
