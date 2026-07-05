@@ -175,6 +175,20 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
 .quote-divider blockquote { border-left: none; text-align: center; font-size: 20px; max-width: 650px; margin: 0 auto; color: var(--purple-dark); }
 .quote-divider .attribution { font-family: 'Raleway', sans-serif; font-style: normal; font-size: 12px; color: var(--gold); margin-top: 14px; letter-spacing: 1px; text-transform: uppercase; }
 
+.services-pharmacy-note {
+  margin: 0 auto 40px;
+  text-align: center;
+  max-width: 720px;
+  padding: 32px 28px;
+  background: var(--gold-light);
+  border-radius: 12px;
+  border: 1px solid rgba(196,162,101,0.25);
+}
+.services-pharmacy-note p { font-family: 'Sorts Mill Goudy', serif; font-size: 18px; color: var(--purple-dark); line-height: 1.7; }
+.services-pharmacy-note .services-pharmacy-lead { margin-bottom: 20px; }
+.services-pharmacy-note .services-pharmacy-name { font-weight: 600; margin-bottom: 8px; }
+.services-pharmacy-note .services-pharmacy-or { font-family: 'Raleway', sans-serif; font-size: 14px; color: var(--text-light); margin: 8px 0; }
+
 .faq-item { border-bottom: 1px solid rgba(123,94,167,0.1); padding: 24px 0; }
 .faq-q { font-weight: 600; font-size: 17px; display: flex; justify-content: space-between; align-items: center; }
 .faq-q::after { content: '+'; font-size: 24px; color: var(--purple); }
@@ -1064,12 +1078,13 @@ body.collection-active { background: var(--deep-plum); }
       <blockquote style="border-left: none; text-align: center; font-size: 20px; max-width: 700px; margin: 0 auto; color: var(--purple-dark);">&ldquo;Something as simple and ordinary as drinking a cup of tea can bring us great joy and help us feel our connection to the Earth&hellip; Drinking a cup of tea is a pleasure we can give ourselves every day.&rdquo;</blockquote>
       <div class="attribution">Thich Nhat Hanh</div>
     </div>
-    <div class="services-pharmacy-note" style="margin: 0 auto 40px; text-align: center; max-width: 700px;">
-      <p style="font-family: 'Sorts Mill Goudy', serif; font-size: 18px; color: var(--purple-dark); line-height: 1.7; margin-bottom: 20px;">I custom formulate herbal teas, tinctures, and other preparations to individual needs which are dispensed and shipped by</p>
-      <p style="font-family: 'Sorts Mill Goudy', serif; font-size: 18px; color: var(--purple-dark); font-weight: 600; margin-bottom: 8px;">Five Flavors Herbal Pharmacy</p>
-      <p style="font-size: 14px; color: var(--text-light); margin: 8px 0;">- or -</p>
-      <p style="font-family: 'Sorts Mill Goudy', serif; font-size: 18px; color: var(--purple-dark); font-weight: 600;">Forest &amp; Meadow Apothecary</p>
-    </div>
+  </div>
+
+  <div class="services-pharmacy-note">
+    <p class="services-pharmacy-lead">I custom formulate herbal teas, tinctures, and other preparations to individual needs which are dispensed and shipped by</p>
+    <p class="services-pharmacy-name">Five Flavors Herbal Pharmacy</p>
+    <p class="services-pharmacy-or">- or -</p>
+    <p class="services-pharmacy-name">Forest &amp; Meadow Apothecary</p>
   </div>
 
   <h3 style="margin-top: 50px; text-align: center;">Value Packages</h3>
