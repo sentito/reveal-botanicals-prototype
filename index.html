@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-04-v13-windflower-popup-text -->
+<!-- deploy: 2026-07-04-v13-popup-consistent-font -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -325,6 +325,10 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 .plant-modal-close { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border: none; border-radius: 50%; background: rgba(255,255,255,0.95); color: var(--purple-dark); font-size: 22px; cursor: pointer; line-height: 1; box-shadow: 0 2px 8px rgba(0,0,0,0.15); z-index: 2; }
 .plant-modal-close:hover { background: white; }
 .plant-modal-label { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 600; margin-bottom: 8px; }
+.plant-modal-title { font-family: 'Sorts Mill Goudy', serif; font-size: 24px; color: var(--purple-dark); margin-bottom: 8px; font-weight: 400; }
+.plant-modal-latin { font-family: 'Sorts Mill Goudy', serif; font-size: 15px; color: var(--text-medium); margin-bottom: 10px; font-style: italic; }
+.plant-modal-text { font-family: 'Sorts Mill Goudy', serif; font-size: 15px; color: var(--text-medium); line-height: 1.7; margin-bottom: 14px; }
+.plant-modal-body .plant-detail-list li { font-family: 'Sorts Mill Goudy', serif; }
 
 /* Option 3: Detail page (Comfrey) */
 .plant-detail-page { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; animation: fadeIn 0.35s ease; }
@@ -1220,9 +1224,9 @@ body.collection-active { background: var(--deep-plum); }
     <button type="button" class="plant-modal-close" onclick="closePlantModal()" aria-label="Close">&times;</button>
     <img id="collection-plant-modal-img" class="plant-modal-img" src="" alt="">
     <div class="plant-modal-body">
-      <h4 id="collection-plant-modal-title" style="font-family:'Sorts Mill Goudy',serif;font-size:24px;color:var(--purple-dark);margin-bottom:8px;"></h4>
-      <p id="collection-plant-modal-latin" style="font-size:14px;color:var(--text-light);margin-bottom:14px;"></p>
-      <p id="collection-plant-modal-text" style="font-size:14px;color:var(--text-medium);line-height:1.7;margin-bottom:14px;"></p>
+      <h4 id="collection-plant-modal-title" class="plant-modal-title"></h4>
+      <p id="collection-plant-modal-latin" class="plant-modal-latin"></p>
+      <p id="collection-plant-modal-text" class="plant-modal-text"></p>
       <ul id="collection-plant-modal-list" class="plant-detail-list"></ul>
     </div>
   </div>
