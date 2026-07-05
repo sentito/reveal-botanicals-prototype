@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-04-v13-jack-native-capitalized -->
+<!-- deploy: 2026-07-04-v13-modal-img-contain -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -320,7 +320,7 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 .plant-modal-backdrop { position: absolute; inset: 0; background: rgba(45,36,56,0.55); z-index: 0; }
 .plant-modal-box { position: relative; z-index: 1; background: white; border-radius: 16px; max-width: 640px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(45,36,56,0.25); animation: modalIn 0.3s ease; }
 @keyframes modalIn { from { opacity: 0; transform: scale(0.95) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
-.plant-modal-img { width: 100%; height: 240px; object-fit: cover; display: block; border-radius: 16px 16px 0 0; }
+.plant-modal-img { width: 100%; height: auto; max-height: 50vh; object-fit: contain; object-position: center top; display: block; border-radius: 16px 16px 0 0; background: var(--warm-white); }
 .plant-modal-body { padding: 28px 32px 32px; text-align: left; background: var(--gold-light); border-radius: 0 0 16px 16px; }
 .plant-modal-close { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border: none; border-radius: 50%; background: rgba(255,255,255,0.95); color: var(--purple-dark); font-size: 22px; cursor: pointer; line-height: 1; box-shadow: 0 2px 8px rgba(0,0,0,0.15); z-index: 2; }
 .plant-modal-close:hover { background: white; }
