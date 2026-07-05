@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-04-v13-collection-gallery-header-gap -->
+<!-- deploy: 2026-07-04-v13-wild-rose-to-orchestra-gallery -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -1193,13 +1193,6 @@ body.collection-active { background: var(--deep-plum); }
 
         
         
-        <div class="plant-card plant-clickable" onclick="openPlantModal('wildrose', event)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openPlantModal('wildrose', event)">
-          <div class="plant-card-placeholder">Photo coming soon</div>
-          <div class="plant-card-label" style="text-align:center;">
-            <strong style="color: var(--purple-dark);">Wild Rose</strong>
-            <p class="latin">Rosa spp.</p>
-          </div>
-        </div>
         <div class="plant-card plant-clickable" onclick="openPlantModal('rosehips', event)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openPlantModal('rosehips', event)">
           <div class="plant-card-placeholder">Photo coming soon</div>
           <div class="plant-card-label" style="text-align:center;">
@@ -1483,16 +1476,6 @@ const plantModalData = {
       ['Sanctuary note:', 'Grown for external preparations; internal use requires professional guidance']
     ]
   },
-  wildrose: {
-    title: 'Wild Rose',
-    latin: 'Rosa spp.',
-    text: 'Rich in vitamin C and antioxidants. Traditional use for immune support, skin health, and gentle mood enhancement.',
-    details: [
-      ['In the garden:', 'Native and cultivated roses throughout the sanctuary borders'],
-      ['Traditional use:', 'Immune support, skin health, and gentle mood enhancement'],
-      ['Sanctuary note:', 'Photo and full profile coming soon']
-    ]
-  },
   rosehips: {
     title: 'Rose Hips',
     latin: 'Rosa spp.',
@@ -1687,6 +1670,8 @@ const collectionGalleryData = {
       { type: 'text', text: 'Crataegus douglasii - Black Hawthorn - a native Pacific NW specie - the genus Crataegus is found world-wide and is a classic for supporting both the physical and emotional heart, supporting the endothelial vasculature and modulating nitric oxide. The leaf, flower, and berry are all useful and best when combined to get a full constituent profile.' },
       { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/9d212f8b-6838-44fd-8fcd-2d48edaf98c7_rw_1920.jpg?h=96a4fdea380ed27f04fe41161cf51956', caption: 'Photo Credits: Annette Shaff, Young Buck Eating Berries, #462470978, stock.adobe.com', alt: 'Photo Credits: Annette Shaff, Young Buck Eating Berries, #462470978, stock.adobe.com' },
       { type: 'text', text: 'Mule Deer are an integral part of the environment in Bellingham, WA, always competing for the resources as they are voracious herbivores and enjoy novelty and variety as well as playing an important role in seed dispersal.' },
+      { type: 'image', placeholder: true, alt: 'Wild Rose, Rosa spp.' },
+      { type: 'text', text: 'Rosa spp. - Wild Rose - Rosaceae family, Rich in vitamin C and antioxidants. Traditional use for immune support, skin health, and gentle mood enhancement. Native and cultivated roses throughout the sanctuary borders.' },
     ]
   },
   'be-yourself': {
@@ -1840,8 +1825,11 @@ function renderCollectionGallery(gallery, slug) {
         const modalId = 'collection-' + slug + '-' + bannerIdx;
         collectionPlantModalData[modalId] = buildPlantModalEntryFromBanner(next.text);
         const parsed = parseForceWithinBanner(next.text);
+        const imageHtml = block.placeholder
+          ? '<div class="plant-card-placeholder">Photo coming soon</div>'
+          : '<img src="' + block.src + '" alt="' + (block.alt || '') + '" loading="lazy">';
         bannerCards.push('<div class="plant-card plant-clickable" onclick="openPlantModal(\'' + modalId + '\', event)" role="button" tabindex="0" onkeydown="if(event.key===\'Enter\')openPlantModal(\'' + modalId + '\', event)" aria-label="' + parsed.common + '">' +
-          '<img src="' + block.src + '" alt="' + (block.alt || '') + '" loading="lazy">' +
+          imageHtml +
           buildSanctuaryStyleBanner(next.text) + '</div>');
         bannerIdx++;
         i++;
