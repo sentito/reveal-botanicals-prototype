@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-04-v13-popup-consistent-font -->
+<!-- deploy: 2026-07-04-v13-popup-body-text-all-galleries -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -1481,7 +1481,7 @@ const collectionGalleryData = {
     attribution: '',
     blocks: [
       { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/d020faf1-4e39-461d-88e6-c65a463f318f_rw_1920.jpeg?h=23d30538132ddfe3cc6a020dcd7f5e35', caption: 'Photo Credits: leomalsam, Purple Pasque Flowers, #141950442, stock.adobe.com', alt: 'Photo Credits: leomalsam, Purple Pasque Flowers, #141950442, stock.adobe.com' },
-      { type: 'text', text: 'Anemone pulsatilla - Wind Flower, Pasque Flower, Pulsatilla - , a low dose herb used by experienced herbalists that supports nervous exhaustion, menstrual irregularities, and gloomy mentality with its analgesic, sedative, and spasm reducing properties' },
+      { type: 'text', text: 'Anemone pulsatilla - Wind Flower, Pasque Flower, Pulsatilla - a low dose herb used by experienced herbalists that supports nervous exhaustion, menstrual irregularities, and gloomy mentality with its analgesic, sedative, and spasm reducing properties' },
       { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/a77f3c7d-5881-4f7f-9f10-4662bd7b01f4_rw_1920.jpeg?h=5802818197a7307f6fdfe31c578e4a76', caption: 'Photo Credits: Olexandr Kulichenko, Seedheads of Pulsatilla, #8460015, stock.adobe.com', alt: 'Photo Credits: Olexandr Kulichenko, Seedheads of Pulsatilla, #8460015, stock.adobe.com' },
       { type: 'text', text: 'Anemone pulsatilla seed-heads - Pulsatilla Seed-heads - ' },
       { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/4433bd75-a040-4e07-b7a9-a8125be6749d_rw_1200.jpg?h=204d578243ca7d55e8e25b6050f72eaf', caption: 'Photo Credits: Carol J Holland Foxglove on the mountain July 2025', alt: 'Photo Credits: Carol J Holland Foxglove on the mountain July 2025' },
@@ -1680,26 +1680,52 @@ function buildSanctuaryStyleBanner(text) {
     '</div>';
 }
 
-function buildPlantModalEntryFromBanner(text) {
-  const parsed = parseForceWithinBanner(text);
-  let bodyText = parsed.description;
-  if (!bodyText) {
-    const parts = text.split(' - ');
-    if (parts.length >= 3) {
-      bodyText = parts.slice(2).join(' - ').trim();
-      const commaIdx = bodyText.indexOf(',');
-      if (commaIdx >= 0) bodyText = bodyText.substring(commaIdx + 1).trim();
-    } else if (parts.length === 2) {
-      bodyText = parts[1].trim();
-    } else {
-      bodyText = text;
-    }
+function isBinomialName(name) {
+  return /^[A-Z][A-Za-z.\d]+\s+[a-z][A-Za-z.\d]*$/.test(name) ||
+    /^[A-Z][A-Za-z.\d]+\s*\/\s*[A-Z][A-Za-z.\d]+\s+[a-z]/.test(name);
+}
+
+function capitalizeBodyText(bodyText) {
+  if (!bodyText) return '';
+  if (bodyText.charAt(0) === bodyText.charAt(0).toLowerCase()) {
+    return bodyText.charAt(0).toUpperCase() + bodyText.slice(1);
   }
+  return bodyText;
+}
+
+function buildPlantModalEntryFromBanner(text) {
+  const parts = text.split(' - ');
+  const scientific = (parts[0] || '').trim();
+  let title;
+  let bodyText = '';
+
+  if (parts.length >= 3) {
+    title = (parts[1] || scientific).trim();
+    bodyText = parts.slice(2).join(' - ').trim();
+  } else if (parts.length === 2) {
+    const second = parts[1].trim();
+    if (isBinomialName(scientific)) {
+      const commaIdx = second.indexOf(',');
+      if (commaIdx >= 0) {
+        title = second.substring(0, commaIdx).trim();
+        bodyText = second.substring(commaIdx + 1).trim();
+      } else {
+        title = scientific;
+        bodyText = second;
+      }
+    } else {
+      title = scientific;
+      bodyText = second;
+    }
+  } else {
+    title = scientific;
+  }
+
   return {
-    title: parsed.common,
-    latin: parsed.scientific,
-    family: parsed.family || '',
-    text: bodyText,
+    title: title,
+    latin: scientific,
+    family: '',
+    text: capitalizeBodyText(bodyText),
     details: []
   };
 }
