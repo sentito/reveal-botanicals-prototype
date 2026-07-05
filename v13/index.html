@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
-<!-- deploy: 2026-07-04-v13-collection-masthead-copy-trim -->
+<!-- deploy: 2026-07-04-v13-collection-banner-no-family -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -1785,11 +1785,9 @@ function parseForceWithinBanner(text) {
 function buildSanctuaryStyleBanner(text) {
   if (!text) return '';
   const parsed = parseForceWithinBanner(text);
-  const familyLine = parsed.family ? '<p class="family">' + parsed.family + '</p>' : '';
   return '<div class="plant-card-label">' +
     '<strong style="color: var(--purple-dark);">' + parsed.common + '</strong>' +
     '<p class="latin">' + parsed.scientific + '</p>' +
-    familyLine +
     '</div>';
 }
 
