@@ -30,9 +30,9 @@ const collectionGalleryData = {
     attribution: 'J.B. Priestley, author',
     blocks: [
       { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/04a36d40-1aeb-4be6-8939-7476d72cc6ee_rw_1920.jpg?h=5a1093569f2905fb0e46829841d65496', caption: 'Photo Credits: Carol Holland, Arnica amplexicaulis, Yellow Aster Butte, 2024', alt: 'Photo Credits: Carol Holland, Arnica amplexicaulis, Yellow Aster Butte, 2024' },
-      { type: 'text', text: 'Arnica amplexicaulis - an alpine specie of Arnica in the Mt Baker - Snoqualamie National Forest WA - an important topical herb for countering inflammation and bruising' },
+      { type: 'text', text: 'Arnica amplexicaulis - Arnica - An alpine specie of Arnica in the Mt Baker - Snoqualmie National Forest, WA. An important topical herb for countering inflammation and bruising.' },
       { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/c3a2c3ac-e8ad-4708-b5d1-73c41aa59d63_rw_1920.jpg?h=dd6a21ad916b6e4006d1a36ba3c56e28', caption: 'Photo Credits: Carol Holland, Arnica latifolia & Lupine, latifolius, Yellow Aster Butte, 2024', alt: 'Photo Credits: Carol Holland, Arnica latifolia & Lupine, latifolius, Yellow Aster Butte, 2024' },
-      { type: 'text', text: 'Arnica latifolia and Lupine latifolius - Arnica specie on the Yellow Aster Butte trail, Mt Baker - Snoqualamie National Forest, WA' },
+      { type: 'text', text: 'Arnica latifolia and Lupine latifolius - Arnica - On the Yellow Aster Butte trail, Mt Baker - Snoqualmie National Forest, WA.' },
     ]
   },
   'guard-your-thoughts': {
