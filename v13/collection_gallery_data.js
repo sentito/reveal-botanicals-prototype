@@ -64,16 +64,16 @@ const collectionGalleryData = {
   'to-be-revealed': {
     title: 'Gone to the Meadow',
     description: '“There is no deeper desire than the desire of being revealed.”',
-    attribution: 'Kahil Gibran',
+    attribution: 'Kahlil Gibran',
     blocks: [
-      { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/9e82a5ff-3a04-4319-b91f-93b7dcc38475_rw_1920.jpg?h=d17db0ba983743c5044c8e8023f9c65b', caption: 'Photo Credits: Doris Gräf, Echinacea purpurea, n a Garden Bed, #636233066, stock.adobe.com', alt: 'Photo Credits: Doris Gräf, Echinacea purpurea, n a Garden Bed, #636233066, stock.adobe.com' },
+      { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/9e82a5ff-3a04-4319-b91f-93b7dcc38475_rw_1920.jpg?h=d17db0ba983743c5044c8e8023f9c65b', caption: 'Photo Credits: Doris Gräf, Echinacea purpurea, in a Garden Bed, #636233066, stock.adobe.com', alt: 'Photo Credits: Doris Gräf, Echinacea purpurea, in a Garden Bed, #636233066, stock.adobe.com' },
       { type: 'text', text: 'Echinacea purpurea - Echinacea - Shown with Geranium in a meadow. A highly studied and complex botanical useful for supporting immune response through a variety of actions, plant parts, and preparations.' },
       { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/b1bb7294-dc11-40fb-b9d9-7135dfc297bb_rw_1920.jpg?h=83e3bb4e1bb15cdfba0846f999efdac0', caption: 'Photo Credits: Katarzyna, Baikal Skullcap, #625585438, stock.adobe.com', alt: 'Photo Credits: Katarzyna, Baikal Skullcap, #625585438, stock.adobe.com' },
       { type: 'text', text: 'Scutellaria baicalensis - Baikal Skullcap - Traditional Chinese herb, Huang Qin, with hundreds of active constituents identified. The root offers immune support, nerve, and liver protection, and is showing promise in pharmaceutical research studies for GI oncology support.' },
       { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/ffc5fbb4-97fb-4898-b9cc-b9d5b06d0e80_rw_1920.jpg?h=b06069c5de17455e3b85f04f1cb3a2aa', caption: 'Photo Credits: Clare Carrellas, California Poppy Field, #446486312, stock.adobe.com', alt: 'Photo Credits: Clare Carrellas, California Poppy Field, #446486312, stock.adobe.com' },
       { type: 'text', text: 'Eschscholzia californica - California Poppy - In a mountain meadow. Helpful for relaxing the tissues and nervous system with its sedative properties.' },
-      { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/9e801156-7641-4749-a9f4-3237b48193c2_rw_1920.jpg?h=132011f0d3c37e144a953d2782ffb2e0', caption: 'Photo Credits: PKZ, Signs of Spring - Camas Lily, #386324143, stock.adobe..com', alt: 'Photo Credits: PKZ, Signs of Spring - Camas Lily, #386324143, stock.adobe..com' },
-      { type: 'text', text: 'Camassia quamash - Camas Lily - A native plant used as a staple food by the Salish and other indigenous people of the NW. Its bulbs are Inulin containing and sweet.' },
+      { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/9e801156-7641-4749-a9f4-3237b48193c2_rw_1920.jpg?h=132011f0d3c37e144a953d2782ffb2e0', caption: 'Photo Credits: PKZ, Signs of Spring - Camas Lily, #386324143, stock.adobe.com', alt: 'Photo Credits: PKZ, Signs of Spring - Camas Lily, #386324143, stock.adobe.com' },
+      { type: 'text', text: 'Camassia quamash - Camas Lily - A native plant used as a staple food by the Salish and other Indigenous people of the NW. Its bulbs are inulin-containing and sweet.' },
     ]
   },
   'connect': {
