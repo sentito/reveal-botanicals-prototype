@@ -54,11 +54,11 @@ const collectionGalleryData = {
     attribution: 'Sally Clarke',
     blocks: [
       { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/a2881788-df04-4e98-a767-f918462f57b5_rw_1920.jpeg?h=1c632bd0ff93d53cea095708b1c8ee5c', caption: 'Photo Credits: Akova, Painted Lady Pollinating Elecampane, #279807003, stock.adobe.com', alt: 'Photo Credits: Akova, Painted Lady Pollinating Elecampane, #279807003, stock.adobe.com' },
-      { type: 'text', text: 'Inula helenium - Elecampane with Painted Lady pollinator, a botanical used circumglobally, documented for thousands of years, beneficial for the lungs and digestion' },
+      { type: 'text', text: 'Inula helenium - Elecampane - Shown with a Painted Lady pollinator. A botanical used circumglobally, documented for thousands of years, beneficial for the lungs and digestion.' },
       { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/37b9de22-55fd-40c5-8587-583fd5893a13_rw_1920.jpeg?h=c1ecb4590dc1164c40b33985aea688d1', caption: 'Photo Credits: lapis2380, Yellow Flower of Elecampane, #1640111459, stock.adobe.com', alt: 'Photo Credits: lapis2380, Yellow Flower of Elecampane, #1640111459, stock.adobe.com' },
-      { type: 'text', text: 'Inula helenium - Elecampane flowering plant, the root supports the respiratory, urinary, and GI tracts and is a rich source of Inulin, a pre-biotic fiber which feeds the intestinal microbiota and slows insulin metabolism, helping to stabilize blood sugar' },
+      { type: 'text', text: 'Inula helenium - Elecampane - The root supports the respiratory, urinary, and GI tracts and is a rich source of Inulin, a pre-biotic fiber which feeds the intestinal microbiota and slows insulin metabolism, helping to stabilize blood sugar.' },
       { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/b2f89ec7-b181-4439-ad66-cc47e1b8daeb_rw_1920.jpeg?h=3e0563667058e9325f4158deb1049c7c', caption: 'Photo Credits: SNEHIT PHOTO, Golden Poppies, #1374851671, stock.adobe.com', alt: 'Photo Credits: SNEHIT PHOTO, Golden Poppies, #1374851671, stock.adobe.com' },
-      { type: 'text', text: 'Eschscholzia californica - California Poppies growing amongst other wildflowers - supports nervous system function through relaxation of tension, while calming the mind and supporting sleep' },
+      { type: 'text', text: 'Eschscholzia californica - California Poppy - Growing amongst other wildflowers. Supports nervous system function through relaxation of tension, while calming the mind and supporting sleep.' },
     ]
   },
   'to-be-revealed': {
