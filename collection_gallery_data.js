@@ -114,7 +114,7 @@ const collectionGalleryData = {
       { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/bd80d27b-3107-4c92-a439-4eb5e6032a57_rw_1920.jpg?h=8d8b8a224a4286602e4d24af6f0bbed8', caption: 'Photo Credits: Orestligetka, Solidago, #54620920 stock.adobe.com', alt: 'Photo Credits: Orestligetka, Solidago, #54620920 stock.adobe.com' },
       { type: 'text', text: 'Solidago canadensis - Goldenrod - supports upper respiratory tissues, sinus congestion, and urinary tract sluggishness' },
       { type: 'image', src: 'https://cdn.myportfolio.com/f078068d-6ea1-4a2a-aa31-e8830096eee1/70e74e32-f706-443d-8fe6-dc73ee8ca1a5_rw_1920.jpg?h=b6e31b826062933565a026a998e8780e', caption: 'Photo Credit: Great Brut Here, Urica dioica, #391470112 stock.adobe.com', alt: 'Photo Credit: Great Brut Here, Urica dioica, #391470112 stock.adobe.com' },
-      { type: 'text', text: 'Urtica dioica - common Stinging Nettles, a highly nutritive rich plant which supports histamine response, stabilizes mast cells, and supports urinary tract and kidney function' },
+      { type: 'text', text: 'Urtica dioica - Stinging Nettles, a highly nutritive rich plant which supports histamine response, stabilizes mast cells, and supports urinary tract and kidney function' },
     ]
   },
   'light-and-shade': {
