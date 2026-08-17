@@ -3,7 +3,7 @@
 ## Current status (2026-08-16)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: Comfrey popup — added seasonal leaf/root caution after repair
+- Last published work: Sanctuary copy typo pass (Comfrey sentence already clean; fixed spelling in other plant texts)
 - Repo state: `main` clean and pushed
 - Word docs in the folder are historical change lists, not the current backlog
 
