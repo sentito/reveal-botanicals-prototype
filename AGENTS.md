@@ -3,7 +3,7 @@
 ## Current status (2026-08-16)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: site-wide footer photo credit — Carol J. Holland, Daniel Mors, and Adobe Stock
+- Last published work: Comfrey popup — lowercase "known"; "tissue and bone repair"
 - Repo state: `main` clean and pushed
 - Word docs in the folder are historical change lists, not the current backlog
 
