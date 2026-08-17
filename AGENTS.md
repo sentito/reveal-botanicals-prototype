@@ -1,5 +1,20 @@
 # Project agent notes
 
+## Current status (2026-08-16)
+
+- Working files: `v13/index.html` and root `index.html` (keep both in sync)
+- Last published work: 2026-08-02 — home hero polish (type size, gold credentials, gold outline on Explore Services)
+- Repo state: `main` clean and pushed
+- Word docs in the folder are historical change lists, not the current backlog
+
+Open items:
+
+- Comfrey image is still embedded as base64; host it on Adobe/Squarespace before go-live (see `SQUARESPACE-MIGRATION-NOTES.md`)
+- Contact page Nylas scheduling widget is still a placeholder
+- Botanical Insights cards are still placeholders
+
+When a session ends, update this section (date, last work, open items, next step) before committing.
+
 ## Deploy workflow
 
 After making website changes (to `index.html`, `v13/index.html`, or other site files that should go live):
