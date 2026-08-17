@@ -3,7 +3,7 @@
 ## Current status (2026-08-16)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: Mimosa — "flower and the bark are uplifting"
+- Last published work: Elecampane — blood sugar caveat on second description
 - Repo state: `main` clean and pushed
 - Word docs in the folder are historical change lists, not the current backlog
 
