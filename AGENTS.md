@@ -3,9 +3,18 @@
 ## Current status (2026-11-07)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: Contact page — gold outline on the Discovery Call booking button, matching the homepage gold.
-- Repo state: `main` clean and pushed
+- Last published work: Contact page — gold outline (`#E8D4A0`, the homepage gold) on the Discovery Call booking button. `pictures/Hands at Desk.jpeg` sits under that button. The button links out to the Nylas booking page. No calendar is embedded on this site.
+- Repo state: site changes are on `origin main`. The videos below are local only and are not committed.
 - Word docs in the folder are historical change lists, not the current backlog
+- Next step: the user will choose which MP4 to put on the site, and where. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
+
+Videos ready in `videos/`, converted from the zip, not on the website yet:
+
+- `IMG_7273.mp4` — 12 seconds, 14.6 MB, 1920×1080
+- `IMG_7258.mp4` — 31 seconds, 42.0 MB, 1920×1080
+- `AdobeStock_379225077.mp4` — 15 seconds, 21.3 MB, 1920×1080. Baikal Skullcap stock clip.
+
+`pictures/` is where photos are dropped. `videos/` is where videos are dropped. Web video format for this site is MP4.
 
 Open items:
 
