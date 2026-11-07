@@ -16,6 +16,8 @@ Videos ready in `videos/`, converted from the zip, not on the website yet:
 
 `pictures/` is where photos are dropped. `videos/` is where videos are dropped. Web video format for this site is MP4.
 
+ffmpeg 9.0.2 is installed for this Windows user (`winget install --id Gyan.FFmpeg -e --scope user`). New shells can run `ffmpeg`. Use it to convert `.mov` files to H.264 MP4. iPhone clips are often HEVC and need the BT.709 conversion before they will look right on the site.
+
 Open items:
 
 - Comfrey image is still embedded as base64; host it on Adobe/Squarespace before go-live (see `SQUARESPACE-MIGRATION-NOTES.md`)
