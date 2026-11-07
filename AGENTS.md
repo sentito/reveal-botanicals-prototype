@@ -1,16 +1,15 @@
 # Project agent notes
 
-## Current status (2026-08-16)
+## Current status (2026-11-07)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: Old Man's Beard — reorder sentences; "Shown above growing..."
+- Last published work: Contact page — Discovery Call links out to the booking page. The calendar stays on that page.
 - Repo state: `main` clean and pushed
 - Word docs in the folder are historical change lists, not the current backlog
 
 Open items:
 
 - Comfrey image is still embedded as base64; host it on Adobe/Squarespace before go-live (see `SQUARESPACE-MIGRATION-NOTES.md`)
-- Contact page Nylas scheduling widget is still a placeholder
 - Botanical Insights cards are still placeholders
 - Per-image Sanctuary credit strings are still verbose (footer line is the site-wide credit)
 
