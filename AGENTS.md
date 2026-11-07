@@ -3,7 +3,7 @@
 ## Current status (2026-11-07)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: Contact page — Discovery Call links out to the booking page. The calendar stays on that page.
+- Last published work: Contact page — Hands at Desk photo under the Discovery Call booking button. The calendar stays on the outside booking page.
 - Repo state: `main` clean and pushed
 - Word docs in the folder are historical change lists, not the current backlog
 
