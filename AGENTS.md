@@ -3,7 +3,7 @@
 ## Current status (2026-11-08)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: Homepage — the Hippocrates quote on the Arora banner is 110px higher. On a phone it is 34px higher so the words stay on the photo.
+- Last published work: The old Services page is now Pricing. A new Services page holds everything that was below the first photo, with The Path Forward at the top. Phone menu links stack so Pricing can be tapped.
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
 - Repo state: site changes are on `origin main`. The videos below are local only and are not committed.
 - Word docs in the folder are historical change lists, not the current backlog
