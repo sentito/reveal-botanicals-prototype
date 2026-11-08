@@ -1,9 +1,10 @@
 # Project agent notes
 
-## Current status (2026-11-07)
+## Current status (2026-11-08)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: Contact page — gold outline (`#E8D4A0`, the homepage gold) on the Discovery Call booking button. `pictures/Hands at Desk.jpeg` sits under that button. The button links out to the Nylas booking page. No calendar is embedded on this site.
+- Last published work: Homepage — "Specializing in..." is larger (24px) and light lavender (`#D4C2F0`).
+- Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
 - Repo state: site changes are on `origin main`. The videos below are local only and are not committed.
 - Word docs in the folder are historical change lists, not the current backlog
 - Next step: the user will choose which MP4 to put on the site, and where. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
