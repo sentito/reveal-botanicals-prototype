@@ -210,6 +210,8 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
 .services-pharmacy-note .services-pharmacy-or { font-family: 'Raleway', sans-serif; font-size: 16px; color: var(--text-light); margin: 8px 0; }
 .services-tea-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 0 0 40px; }
 .services-tea-pair img { width: 100%; height: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); display: block; }
+.services-bodysite.section { padding-bottom: 0; }
+.services-pharmacy.section { padding-top: 20px; }
 
 .faq-item { border-bottom: 1px solid rgba(123,94,167,0.1); padding: 24px 0; }
 .faq-q { font-weight: 600; font-size: 17px; display: flex; justify-content: space-between; align-items: center; }
@@ -1187,7 +1189,7 @@ body.collection-active { background: var(--deep-plum); }
 </section>
 
 <!-- BodySite Info -->
-<section class="section" style="text-align: center;">
+<section class="section services-bodysite" style="text-align: center;">
   <h3>Integrated with BODYSITE</h3>
   <p style="max-width: 700px; margin: 12px auto 24px; color: var(--text-medium);">All scheduling, forms, and ongoing communication happen through the BodySite platform &mdash; a secure, HIPAA compliant health management system &amp; app where you can:</p>
   <div class="bodySite-features">
@@ -1204,7 +1206,7 @@ body.collection-active { background: var(--deep-plum); }
   </div>
 </section>
 
-<section class="section">
+<section class="section services-pharmacy">
 <div class="services-pharmacy-note">
     <p class="services-pharmacy-lead">As a Clinical Herbalist, I specialize in combining the art of formulation with the science of botanical dynamics.</p>
     <p class="services-pharmacy-lead services-pharmacy-lead-before-names">I custom formulate herbal teas, tinctures, and other preparations to individual needs which are dispensed and shipped by:</p>
