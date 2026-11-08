@@ -230,6 +230,7 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
 }
 .cta-banner h2 { color: white; margin-bottom: 16px; }
 .cta-banner p { font-size: 18px; opacity: 0.9; max-width: 500px; margin: 0 auto 30px; }
+.arora-quote { transform: translateY(-100px); }
 
 .promo-bar { background: linear-gradient(135deg, var(--purple-dark), var(--purple)); padding: 20px 40px; text-align: center; color: white; }
 .promo-bar strong { font-size: 17px; }
@@ -275,6 +276,7 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
   .footer-grid { grid-template-columns: 1fr; }
   .btn-outline { margin-left: 0; margin-top: 12px; }
   .legend { flex-direction: column; gap: 8px; }
+  .arora-quote { transform: translateY(-24px); }
 }
 
 
@@ -947,8 +949,10 @@ body.collection-active { background: var(--deep-plum); }
 <section style="position: relative;">
   <img src="pictures/Arora.jpeg" alt="Aurora over a forested ridge" width="1600" height="721" style="width: 100%; height: auto; display: block;">
   <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(45,36,56,0.3), rgba(45,36,56,0.5)); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 24px;">
-    <p style="font-family: 'Sorts Mill Goudy', serif; font-size: clamp(18px, 2.5vw, 24px); color: white; text-align: center; max-width: 820px; line-height: 1.55; font-style: italic;">&ldquo;The natural healing force within each one of us is the greatest force in getting well.&rdquo;</p>
-    <p style="font-family: 'Raleway', sans-serif; font-size: 13px; color: rgba(255,255,255,0.9); text-align: center; margin-top: 16px; letter-spacing: 2px; text-transform: uppercase;">Hippocrates</p>
+    <div class="arora-quote">
+      <p style="font-family: 'Sorts Mill Goudy', serif; font-size: clamp(18px, 2.5vw, 24px); color: white; text-align: center; max-width: 820px; line-height: 1.55; font-style: italic;">&ldquo;The natural healing force within each one of us is the greatest force in getting well.&rdquo;</p>
+      <p style="font-family: 'Raleway', sans-serif; font-size: 13px; color: rgba(255,255,255,0.9); text-align: center; margin-top: 16px; letter-spacing: 2px; text-transform: uppercase;">Hippocrates</p>
+    </div>
   </div>
 </section>
 
