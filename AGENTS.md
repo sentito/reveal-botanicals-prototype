@@ -3,7 +3,7 @@
 ## Current status (2026-11-08)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: About page — “I listen, I care...” is 19px. Homepage support buttons are View Services and View Pricing, side by side.
+- Last published work: Services page — “Integrated with BODYSITE” is 45.5px. There are 70px between the portal button and the Five Flavors banner. The Path Forward descriptions under the numbers are 14px.
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
 - Repo state: site changes are on `origin main`. The videos below are local only and are not committed.
 - Word docs in the folder are historical change lists, not the current backlog
