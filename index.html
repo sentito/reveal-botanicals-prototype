@@ -129,6 +129,7 @@ nav {
 .hero .btn-outline { border-color: #E8D4A0; }
 .btn-gold { background: var(--gold); color: white; }
 .btn-gold:hover { background: #B39358; transform: translateY(-2px); }
+.home-view-links { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 40px; }
 
 .section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
 .section-alt { background: var(--purple-light); }
@@ -287,6 +288,7 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
   .service-item { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .btn-outline { margin-left: 0; margin-top: 12px; }
+  .home-view-links .btn { padding: 14px 18px; }
   .legend { flex-direction: column; gap: 8px; }
   .arora-quote { transform: translateY(-34px); }
 }
@@ -946,8 +948,9 @@ body.collection-active { background: var(--deep-plum); }
         <p>Support to achieve a calm and focused mind in tandem with digestive regularity. Rebuilding your foundation when fatigue, stress, brain fog, or restless nights hold you back. Supporting healthy digestion complements recharging your brain for an integrated benefit to heal your gut and regain a sense of calm.</p>
       </div>
     </div>
-    <div style="text-align: center; margin-top: 40px;">
-      <a href="#" onclick="showPage('pricing')" class="btn btn-primary">View Services &amp; Pricing</a>
+    <div class="home-view-links">
+      <a href="#" onclick="showPage('services')" class="btn btn-primary">View Services</a>
+      <a href="#" onclick="showPage('pricing')" class="btn btn-primary">View Pricing</a>
     </div>
   </div>
 </section>
