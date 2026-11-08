@@ -3,7 +3,7 @@
 ## Current status (2026-11-08)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: Homepage — space under "Reveal Botanicals" is 26px. Space under "Functional Clinical Herbalist" stays 34px.
+- Last published work: Homepage — space under "Functional Clinical Herbalist" is 38px. Space under "Reveal Botanicals" stays 26px.
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
 - Repo state: site changes are on `origin main`. The videos below are local only and are not committed.
 - Word docs in the folder are historical change lists, not the current backlog
