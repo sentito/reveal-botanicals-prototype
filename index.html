@@ -311,8 +311,10 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
 .promo-page { background: var(--cream); padding: 80px 40px; text-align: center; }
 .promo-page h2 { margin-bottom: 20px; }
 
-.bodySite-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; max-width: 900px; margin-left: auto; margin-right: auto; }
-.bodySite-feature { background: var(--cream); border-radius: 8px; padding: 16px; text-align: center; font-size: 13px; color: var(--text-medium); }
+.bodySite-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 24px; max-width: 1080px; margin-left: auto; margin-right: auto; }
+.bodySite-feature { background: var(--cream); border-radius: 8px; padding: 22px 16px; text-align: center; font-size: 20px; font-weight: 700; color: var(--text-medium); line-height: 1.35; }
+.bodySite-icon { font-size: 34px; line-height: 1; display: inline-block; margin-right: 8px; vertical-align: middle; font-weight: 400; }
+.bodySite-detail { display: block; margin-top: 6px; font-size: 16px; font-weight: 700; }
 .bodySite-feature--centered { grid-column: 2; }
 
 @media (max-width: 768px) {
@@ -1193,13 +1195,13 @@ body.collection-active { background: var(--deep-plum); }
   <h3>Integrated with BODYSITE</h3>
   <p style="max-width: 700px; margin: 12px auto 24px; color: var(--text-medium);">All scheduling, forms, and ongoing communication happen through the BodySite platform &mdash; a secure, HIPAA compliant health management system &amp; app where you can:</p>
   <div class="bodySite-features">
-    <div class="bodySite-feature">📅 Schedule a Discovery Call</div>
-    <div class="bodySite-feature">📋 Fill out intake forms</div>
-    <div class="bodySite-feature">⌚ Connect wearables<br><span style="font-size: 11px;">(Apple Health, Fitbit, Oura Ring, InBody, Withings)</span></div>
-    <div class="bodySite-feature">💬 Message me directly</div>
-    <div class="bodySite-feature">🎥 Watch instructive videos</div>
-    <div class="bodySite-feature">📊 Track your progress and biometrics</div>
-    <div class="bodySite-feature bodySite-feature--centered">🧪 Order supplements and labs through FullScript</div>
+    <div class="bodySite-feature"><span class="bodySite-icon">📅</span> Schedule a Discovery Call</div>
+    <div class="bodySite-feature"><span class="bodySite-icon">📋</span> Fill out intake forms</div>
+    <div class="bodySite-feature"><span class="bodySite-icon">⌚</span> Connect wearables<span class="bodySite-detail">(Apple Health, Fitbit, Oura Ring, InBody, Withings)</span></div>
+    <div class="bodySite-feature"><span class="bodySite-icon">💬</span> Message me directly</div>
+    <div class="bodySite-feature"><span class="bodySite-icon">🎥</span> Watch instructive videos</div>
+    <div class="bodySite-feature"><span class="bodySite-icon">📊</span> Track your progress and biometrics</div>
+    <div class="bodySite-feature bodySite-feature--centered"><span class="bodySite-icon">🧪</span> Order supplements and labs through FullScript</div>
   </div>
   <div style="margin-top: 30px;">
     <a href="https://revealbotanicals.mybodysite.com" target="_blank" class="btn btn-primary">Visit BodySite Portal</a>
