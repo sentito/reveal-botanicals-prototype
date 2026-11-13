@@ -1302,8 +1302,8 @@ body.collection-active { background: var(--deep-plum); }
     </div>
     </div>
     <div class="path-forward-media">
-      <video class="path-forward-video" loop playsinline preload="none" poster="../pictures/HemlockTrailStream-poster.jpg" aria-label="A stream along the Hemlock Trail">
-        <source src="../videos/HemlockTrailStream-5s.mp4" type="video/mp4">
+      <video class="path-forward-video" muted loop playsinline preload="none" poster="../pictures/HemlockTrailStream-poster.jpg" aria-label="A stream along the Hemlock Trail">
+        <source src="../videos/HemlockTrailStream-6s.mp4" type="video/mp4">
       </video>
     </div>
     </div>
@@ -2087,33 +2087,53 @@ function syncHeroVideo(pageId) {
 function syncPathVideo(pageId) {
   var video = document.querySelector('.path-forward-video');
   if (!video) return;
-  if (pageId !== 'services') {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || pageId !== 'services') {
     video.pause();
+    video.muted = true;
     return;
   }
+  video.muted = true;
   video.preload = 'auto';
+  var start = function () {
+    var page = document.querySelector('.page.active');
+    if (!page || page.id !== 'page-services') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    video.play().catch(function () {});
+  };
+  if (video.readyState >= 2) start();
+  else video.addEventListener('loadeddata', start, { once: true });
 }
 
 function bindPathVideoHover() {
   var video = document.querySelector('.path-forward-video');
   var box = document.querySelector('.path-forward-media');
   if (!video || !box) return;
-  function playWithSound() {
+  function soundOn() {
     video.muted = false;
-    video.play().catch(function () {});
+    var pending = video.play();
+    if (pending && pending.catch) {
+      pending.catch(function () {
+        video.muted = true;
+        video.play().catch(function () {});
+      });
+    }
+  }
+  function soundOff() {
+    video.muted = true;
   }
   box.addEventListener('pointerenter', function (e) {
     if (e.pointerType !== 'mouse') return;
-    playWithSound();
+    soundOn();
   });
   box.addEventListener('pointerleave', function (e) {
     if (e.pointerType !== 'mouse') return;
-    video.pause();
+    soundOff();
   });
   box.addEventListener('pointerup', function (e) {
     if (e.pointerType === 'mouse') return;
-    if (video.paused) playWithSound();
-    else video.pause();
+    if (video.muted) soundOn();
+    else soundOff();
   });
 }
 
