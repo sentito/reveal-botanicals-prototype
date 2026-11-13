@@ -201,12 +201,13 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
 .step p { font-size: 14px; color: var(--text-medium); }
 .path-forward {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr);
   column-gap: 48px;
   align-items: stretch;
   margin-top: 36px;
 }
-.path-forward .steps { flex-direction: column; gap: 22px; }
+.path-forward .steps { grid-column: 2; grid-row: 1; flex-direction: column; gap: 22px; }
+.path-forward-media { grid-column: 1; grid-row: 1; }
 .path-forward .step {
   flex: none;
   text-align: left;
@@ -352,7 +353,8 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
   .cards-3, .blog-grid, .package-grid { grid-template-columns: 1fr; }
   .steps { flex-direction: column; } .step::after { display: none; }
   .path-forward { grid-template-columns: 1fr; row-gap: 28px; justify-items: center; }
-  .path-forward .steps { width: 100%; }
+  .path-forward .steps { grid-column: 1; grid-row: 1; width: 100%; }
+  .path-forward-media { grid-column: 1; grid-row: 2; }
   .path-forward-media { height: auto; min-height: 0; width: min(70vw, 260px); aspect-ratio: auto; }
   .path-forward-video { position: static; width: 100%; height: auto; }
   .service-item { grid-template-columns: 1fr; }
