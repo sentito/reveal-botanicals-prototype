@@ -197,6 +197,40 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
 .step-num { width: 50px; height: 50px; background: var(--purple); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; margin: 0 auto 16px; }
 .step h4 { font-family: 'Sorts Mill Goudy', serif; font-size: 17px; margin-bottom: 8px; }
 .step p { font-size: 14px; color: var(--text-medium); }
+.path-forward {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 48px;
+  align-items: stretch;
+  margin-top: 36px;
+}
+.path-forward .steps { flex-direction: column; gap: 22px; }
+.path-forward .step {
+  flex: none;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  column-gap: 16px;
+  row-gap: 6px;
+  align-items: start;
+}
+.path-forward .step::after { display: none; }
+.path-forward .step-num { grid-column: 1; grid-row: 1 / span 2; margin: 0; align-self: center; }
+.path-forward .step h4 { grid-column: 2; grid-row: 1; margin: 0; align-self: end; }
+.path-forward .step p { grid-column: 2; grid-row: 2; }
+.path-forward-media {
+  position: relative;
+  height: 0;
+  min-height: 100%;
+  aspect-ratio: 1080 / 1920;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #2D2438 url('pictures/HemlockTrailStream-poster.jpg') center / cover no-repeat;
+}
+.path-forward-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (prefers-reduced-motion: reduce) {
+  .path-forward-video { display: none; }
+}
 
 .testimonial-section { background: var(--cream); padding: 80px 40px; text-align: center; }
 .testimonial { max-width: 680px; margin: 0 auto; background: white; border-radius: 16px; padding: 50px 45px; box-shadow: 0 4px 30px rgba(45,36,56,0.08); border: 1px solid rgba(123,94,167,0.12); position: relative; }
@@ -315,6 +349,10 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
   .about-layout .photo-about { position: static; height: auto; aspect-ratio: 2/3; }
   .cards-3, .blog-grid, .package-grid { grid-template-columns: 1fr; }
   .steps { flex-direction: column; } .step::after { display: none; }
+  .path-forward { grid-template-columns: 1fr; row-gap: 28px; justify-items: center; }
+  .path-forward .steps { width: 100%; }
+  .path-forward-media { height: auto; min-height: 0; width: min(70vw, 260px); aspect-ratio: auto; }
+  .path-forward-video { position: static; width: 100%; height: auto; }
   .service-item { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .btn-outline { margin-left: 0; margin-top: 12px; }
@@ -1205,6 +1243,7 @@ body.collection-active { background: var(--deep-plum); }
   <div style="max-width: 1200px; margin: 0 auto;">
     <h2 style="text-align: center; margin-bottom: 6px;">The Path Forward</h2>
     <p class="subtitle" style="text-align: center; font-size: 20px;">New to herbalism? Here's what to expect</p>
+    <div class="path-forward">
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -1231,6 +1270,12 @@ body.collection-active { background: var(--deep-plum); }
         <h4>Ongoing Support</h4>
         <p>Regular check-ins to track progress, adjust formulas, as your body responds, to keep moving toward your goals, for as long as you need.</p>
       </div>
+    </div>
+    <div class="path-forward-media">
+      <video class="path-forward-video" muted loop playsinline preload="none" poster="pictures/HemlockTrailStream-poster.jpg" aria-label="A stream along the Hemlock Trail">
+        <source src="videos/HemlockTrailStream.mp4" type="video/mp4">
+      </video>
+    </div>
     </div>
   </div>
 </section>
@@ -2009,6 +2054,20 @@ function syncHeroVideo(pageId) {
   else video.addEventListener('loadeddata', start, { once: true });
 }
 
+function syncPathVideo(pageId) {
+  var video = document.querySelector('.path-forward-video');
+  if (!video) return;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || pageId !== 'services') {
+    video.pause();
+    return;
+  }
+  video.preload = 'auto';
+  var start = function () { video.play().catch(function () {}); };
+  if (video.readyState >= 2) start();
+  else video.addEventListener('loadeddata', start, { once: true });
+}
+
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + pageId).classList.add('active');
@@ -2020,8 +2079,10 @@ function showPage(pageId) {
   closeCollectionDetail();
   window.scrollTo(0, 0);
   syncHeroVideo(pageId);
+  syncPathVideo(pageId);
 }
 syncHeroVideo('home');
+syncPathVideo('home');
 (function () {
   var keepPageTop = true;
   function releasePageTop() { keepPageTop = false; }

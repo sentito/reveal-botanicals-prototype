@@ -3,7 +3,7 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: About page — Yellow Aster Butte is 70% of the page width, centered, at its natural height. There is no tint over that photo.
+- Last published work: Services page — “The Path Forward” steps are stacked, with `videos/HemlockTrailStream.mp4` on the right at the same height as those five steps. On a phone the video sits under the list.
 - The nursing line still ends with “Oncology, Cardiothoracic.” The three organization logos under it are 161px tall.
 - Homepage remains: the hero photo is behind “Reveal Botanicals,” with the original dark tint. `videos/FoxGlovePath.mp4` plays on a muted loop between “Immerse Yourself” and “How I Offer Support.” A refresh opens at the top of the page.
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
@@ -15,10 +15,11 @@
 On the site:
 
 - `videos/FoxGlovePath.mp4` — 26 seconds, about 24.2 MB, 1920×1080. Poster: `pictures/FoxGlovePath-poster.jpg`.
+- `videos/HemlockTrailStream.mp4` — about 10 seconds, portrait 1080×1920, about 28 MB. Plays muted beside The Path Forward. Poster: `pictures/HemlockTrailStream-poster.jpg`.
 
 Other clips in `videos/`, local only:
 
-- `HemlockTrailStream.mp4` — about 10 seconds, portrait, converted from the `.mov`
+- `HemlockTrailStream.mov` — original phone clip. The MP4 is on the Services page. Do not commit the `.mov`.
 - `Butterflies.mp4`
 - `AdobeStock_379225077.mp4` — Baikal Skullcap stock clip
 
