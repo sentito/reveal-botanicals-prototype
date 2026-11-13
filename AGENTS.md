@@ -3,7 +3,7 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: the Hemlock Trail video on Services loops from the 2.5-second mark to the 5.5-second mark.
+- Last published work: on Services, The Path Forward has about 30px more color under the last line of text, and the Hemlock video hangs about 20px below that line. The top of the video stays with the title.
 - The page names on the menu bar are spaced across the bar. The gap between names is about 60px on a wide screen and about 34px at 1280px.
 - On the About page, “Reveal Botanicals is set…” is a darker blue (`#0E3A6E`), a little heavier, with a light edge so it stands out on the sky.
 - On the homepage, “Your health journey…” and the Schedule button sit 20px below the aurora photo.
@@ -15,7 +15,7 @@
 - On the homepage, “Ready to Feel Better?” sits on the bottom of the aurora photo. “Your health journey…” and the Schedule button start 20px below that photo.
 - “The Path Forward” on the Services page is bold, 42px, and 34px on a phone. The five sentences under it are 15px. “New to herbalism…” is `#2D2438`.
 - The page names on the menu bar are 18px and are spaced across the bar. On a screen narrower than 1280px the menu is the button, so those names stay whole. Below 1540px the words beside the logo are hidden; the logo already reads Reveal Botanicals. The opened phone menu names stay 22px.
-- The Hemlock Trail video stays on the left of The Path Forward and reaches that section title.
+- The Hemlock Trail video stays on the left of The Path Forward. Its top lines up with the title. Its bottom hangs about 20px below the last step. The colored box ends about 30px lower than it did. On a phone the video stays the same size under the steps, and the box ends 30px lower.
 - The homepage specialty line says “Immunometabolic.”
 - The homepage title “Reveal Botanicals” sits 10px lower.
 - The menu bar remains 112px tall, with `pictures/RB Logo.png` filling that height. Menu page names on the bar are 18px.
