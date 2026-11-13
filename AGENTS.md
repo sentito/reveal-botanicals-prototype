@@ -8,7 +8,7 @@
 - Services page remains published: “Integrated with BODYSITE” matches “The Path Forward” at 40px (32px on a phone).
 - Repo state: the homepage uses the 26-second cut. The untrimmed source is also in the repo at `videos/Fox Glove with path.mp4` (31.3 seconds, about 42 MB) and is not used on the page. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
 - Word docs in the folder are historical change lists, not the current backlog
-- Next step: the user started a note about the dark screen over the hero photo. The sentence was cut off, so the original tint is back with the photo.
+- Next step: the dark tint stays on the hero photo only. The foxglove video has no tint.
 
 On the site:
 
