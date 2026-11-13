@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reveal Botanicals — Prototype v13 Multi-Page (Experiments)</title>
+<script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
 <!-- deploy: 2026-07-12-prospect-arnica-thumbnails -->
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Sorts+Mill+Goudy:ital@0;1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -120,6 +121,7 @@ nav {
   height: min(56vw, 640px);
   min-height: 280px;
   overflow: hidden;
+  overflow-anchor: none;
   background: #2D2438 url('../pictures/FoxGlovePath-poster.jpg') center center / cover no-repeat;
 }
 .home-path-video .hero-video {
@@ -2018,6 +2020,21 @@ function showPage(pageId) {
   syncHeroVideo(pageId);
 }
 syncHeroVideo('home');
+(function () {
+  var keepPageTop = true;
+  function releasePageTop() { keepPageTop = false; }
+  ['wheel', 'touchmove', 'keydown', 'pointerdown'].forEach(function (type) {
+    window.addEventListener(type, releasePageTop, { passive: true, once: true });
+  });
+  window.addEventListener('scroll', function () {
+    if (keepPageTop && window.scrollY !== 0) window.scrollTo(0, 0);
+  }, { passive: true });
+  window.addEventListener('pageshow', function () { window.scrollTo(0, 0); });
+  var video = document.querySelector('.hero-video');
+  if (video) video.addEventListener('play', function () { if (keepPageTop) window.scrollTo(0, 0); });
+  setTimeout(releasePageTop, 8000);
+  window.scrollTo(0, 0);
+})();
 </script>
 
 </body>
