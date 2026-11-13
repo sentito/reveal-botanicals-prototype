@@ -3,12 +3,12 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: Homepage hero plays `videos/FoxGlovePath.mp4` on a muted loop. It is the first 26 seconds of `Fox Glove with path.mp4`. The same dark tint stays over the video so the title remains readable. The clip starts by itself. Sound stays off so the browser will start it without a click.
+- Last published work: The homepage hero photo is back behind “Reveal Botanicals,” with the original dark tint. `videos/FoxGlovePath.mp4` (the first 26 seconds) plays on a muted loop between “Immerse Yourself” and “How I Offer Support.” The clip starts by itself. Sound stays off so the browser will start it without a click.
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
 - Services page remains published: “Integrated with BODYSITE” matches “The Path Forward” at 40px (32px on a phone).
 - Repo state: the homepage uses the 26-second cut. The untrimmed source is also in the repo at `videos/Fox Glove with path.mp4` (31.3 seconds, about 42 MB) and is not used on the page. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
 - Word docs in the folder are historical change lists, not the current backlog
-- Next step: the user will say if the hero crop, tint, or placement should change.
+- Next step: the user started a note about the dark screen over the hero photo. The sentence was cut off, so the original tint is back with the photo.
 
 On the site:
 
