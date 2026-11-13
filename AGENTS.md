@@ -6,7 +6,7 @@
 - Last published work: Homepage hero plays `videos/FoxGlovePath.mp4` on a muted loop. It is the first 26 seconds of `Fox Glove with path.mp4`. The same dark tint stays over the video so the title remains readable. The clip starts by itself. Sound stays off so the browser will start it without a click.
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
 - Services page remains published: “Integrated with BODYSITE” matches “The Path Forward” at 40px (32px on a phone).
-- Repo state: this hero video is the latest site change. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
+- Repo state: the homepage uses the 26-second cut. The untrimmed source is also in the repo at `videos/Fox Glove with path.mp4` (31.3 seconds, about 42 MB) and is not used on the page. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
 - Word docs in the folder are historical change lists, not the current backlog
 - Next step: the user will say if the hero crop, tint, or placement should change.
 
@@ -16,7 +16,6 @@ On the site:
 
 Other clips in `videos/`, local only:
 
-- `Fox Glove with path.mp4` — full 31-second source
 - `HemlockTrailStream.mp4` — about 10 seconds, portrait, converted from the `.mov`
 - `Butterflies.mp4`
 - `AdobeStock_379225077.mp4` — Baikal Skullcap stock clip
