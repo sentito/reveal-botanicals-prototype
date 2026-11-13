@@ -3,7 +3,8 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: the page names in the menu are 22px. On a screen narrower than 1280px the menu is the button, so those larger names stay whole. Below 1540px the words beside the logo are hidden; the logo already reads Reveal Botanicals.
+- Last published work: “The Path Forward” on the Services page is bold. Its size is still 40px, and 32px on a phone.
+- The page names in the menu are 22px. On a screen narrower than 1280px the menu is the button, so those larger names stay whole. Below 1540px the words beside the logo are hidden; the logo already reads Reveal Botanicals.
 - The Hemlock Trail video stays on the left of The Path Forward and reaches that section title.
 - The homepage specialty line says “Immunometabolic.”
 - The homepage title “Reveal Botanicals” sits 10px lower.
