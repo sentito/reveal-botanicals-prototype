@@ -3,7 +3,7 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: the menu page names sit together on the right again, with 17px between each name.
+- Last published work: the menu bar is a solid warm white, so it stays the same color when the page scrolls under it.
 - The page names on the menu bar sit together on the right. The gap between names is 17px.
 - On the About page, “Reveal Botanicals is set…” is a darker blue (`#0E3A6E`), a little heavier, with a light edge so it stands out on the sky.
 - On the homepage, “Your health journey…” and the Schedule button sit 20px below the aurora photo.
@@ -18,7 +18,7 @@
 - The Hemlock Trail video stays on the left of The Path Forward. Its top lines up with the title. Its bottom hangs about 20px below the last step. The colored box ends about 30px lower than it did. On a phone the video stays the same size under the steps, and the box ends 30px lower.
 - The homepage specialty line says “Immunometabolic.”
 - The homepage title “Reveal Botanicals” sits 10px lower.
-- The menu bar remains 112px tall, with `pictures/RB Logo.png` filling that height. Menu page names on the bar are 18px.
+- The menu bar remains 112px tall, with `pictures/RB Logo.png` filling that height. Its fill is solid `--warm-white` (`#FDFAFD`), with no blur. Menu page names on the bar are 18px.
 - The nursing line still ends with “Oncology, Cardiothoracic.” The three organization logos under it are 161px tall.
 - Homepage remains: the hero photo is behind “Reveal Botanicals,” with the original dark tint. `videos/FoxGlovePath.mp4` plays on a muted loop between “Immerse Yourself” and “How I Offer Support.” A refresh opens at the top of the page.
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
