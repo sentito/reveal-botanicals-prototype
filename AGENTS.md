@@ -3,7 +3,8 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: The homepage hero photo is back behind “Reveal Botanicals,” with the original dark tint. `videos/FoxGlovePath.mp4` (the first 26 seconds) plays on a muted loop between “Immerse Yourself” and “How I Offer Support.” The clip starts by itself. Sound stays off so the browser will start it without a click.
+- Last published work: Services page — “Five Flavors Herbal Apothecary” and “Forest & Meadow Herbal Shop” sit side by side with “- or -” between them. Each logo is directly under its name.
+- Homepage remains: the hero photo is behind “Reveal Botanicals,” with the original dark tint. `videos/FoxGlovePath.mp4` plays on a muted loop between “Immerse Yourself” and “How I Offer Support.”
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
 - Services page remains published: “Integrated with BODYSITE” matches “The Path Forward” at 40px (32px on a phone).
 - Repo state: the homepage uses the 26-second cut. The untrimmed source is also in the repo at `videos/Fox Glove with path.mp4` (31.3 seconds, about 42 MB) and is not used on the page. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
