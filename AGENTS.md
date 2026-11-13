@@ -3,7 +3,7 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: Services page — “The Path Forward” steps are stacked, with `videos/HemlockTrailStream.mp4` on the right at the same height as those five steps. On a phone the video sits under the list.
+- Last published work: the top menu bar is 112px tall, 60% taller than before. The mark on the left is `pictures/RB Logo.png` and fills that height.
 - The nursing line still ends with “Oncology, Cardiothoracic.” The three organization logos under it are 161px tall.
 - Homepage remains: the hero photo is behind “Reveal Botanicals,” with the original dark tint. `videos/FoxGlovePath.mp4` plays on a muted loop between “Immerse Yourself” and “How I Offer Support.” A refresh opens at the top of the page.
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
