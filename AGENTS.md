@@ -3,13 +3,14 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: the page names on the menu bar are spaced across the bar. The gap between names is about 60px on a wide screen and about 34px at 1280px.
+- Last published work: the Hemlock Trail video on Services loops from the 2.5-second mark to the 5.5-second mark.
+- The page names on the menu bar are spaced across the bar. The gap between names is about 60px on a wide screen and about 34px at 1280px.
 - On the About page, “Reveal Botanicals is set…” is a darker blue (`#0E3A6E`), a little heavier, with a light edge so it stands out on the sky.
 - On the homepage, “Your health journey…” and the Schedule button sit 20px below the aurora photo.
-- The Hemlock Trail video on Services loops from the 2-second mark through the 6-second mark.
+- The Hemlock Trail video on Services loops from the 2.5-second mark to the 5.5-second mark.
 - On Services, “The Path Forward” is 42px (34px on a phone). The five step sentences are 15px. “New to herbalism…” uses the darker body color `#2D2438`.
 - The page names on the menu bar are 18px. They had been 14px, then 22px.
-- The Hemlock Trail video on the Services page plays as soon as that page is open. Sound plays only while the pointer is over the video. On a phone, a tap turns the sound on and a second tap turns it off. The loop runs from the 2-second mark through the 6-second mark.
+- The Hemlock Trail video on the Services page plays as soon as that page is open. Sound plays only while the pointer is over the video. On a phone, a tap turns the sound on and a second tap turns it off. The loop runs from the 2.5-second mark to the 5.5-second mark.
 - On the About page, “Reveal Botanicals is set…” sits at the top of the Yellow Aster Butte photo, in a darker blue (`#0E3A6E`). On a phone that photo is the full width of the screen so the words stay on the sky. On a wider screen the photo stays 70% of the page width.
 - On the homepage, “Ready to Feel Better?” sits on the bottom of the aurora photo. “Your health journey…” and the Schedule button start 20px below that photo.
 - “The Path Forward” on the Services page is bold, 42px, and 34px on a phone. The five sentences under it are 15px. “New to herbalism…” is `#2D2438`.
@@ -29,12 +30,12 @@
 On the site:
 
 - `videos/FoxGlovePath.mp4` — 26 seconds, about 24.2 MB, 1920×1080. Poster: `pictures/FoxGlovePath-poster.jpg`.
-- `videos/HemlockTrailStream-2to6.mp4` — 4 seconds, about 11.7 MB, portrait 1080×1920, with sound. This is the original clip from 2 seconds to 6 seconds. Plays on the left of The Path Forward as soon as Services is open, and loops. Sound plays only while the pointer is over it. On a phone, a tap turns the sound on and a second tap turns it off. Poster: `pictures/HemlockTrailStream-poster.jpg`.
+- `videos/HemlockTrailStream-2p5to5p5.mp4` — 3 seconds, about 9.2 MB, portrait 1080×1920, with sound. This is the original clip from 2.5 seconds to 5.5 seconds. Plays on the left of The Path Forward as soon as Services is open, and loops. Sound plays only while the pointer is over it. On a phone, a tap turns the sound on and a second tap turns it off. Poster: `pictures/HemlockTrailStream-poster.jpg`.
 - `videos/HemlockTrailStream.mp4` — the full clip, about 10 seconds, about 28 MB. It stays in the repo and is not used on the page.
 
 Other clips in `videos/`, local only:
 
-- `HemlockTrailStream.mov` — original phone clip. The 2-to-6-second MP4 is on the Services page. Do not commit the `.mov`.
+- `HemlockTrailStream.mov` — original phone clip. The 2.5-to-5.5-second MP4 is on the Services page. Do not commit the `.mov`.
 - `Butterflies.mp4`
 - `AdobeStock_379225077.mp4` — Baikal Skullcap stock clip
 
