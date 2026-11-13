@@ -3,7 +3,7 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: Services page — the Hemlock Trail video is on the left of the five Path Forward steps, at the same height.
+- Last published work: Services page — the Hemlock Trail video is on the left and reaches the top of “The Path Forward,” keeping its portrait shape.
 - The menu bar remains 112px tall, with `pictures/RB Logo.png` filling that height.
 - The nursing line still ends with “Oncology, Cardiothoracic.” The three organization logos under it are 161px tall.
 - Homepage remains: the hero photo is behind “Reveal Botanicals,” with the original dark tint. `videos/FoxGlovePath.mp4` plays on a muted loop between “Immerse Yourself” and “How I Offer Support.” A refresh opens at the top of the page.
@@ -16,7 +16,7 @@
 On the site:
 
 - `videos/FoxGlovePath.mp4` — 26 seconds, about 24.2 MB, 1920×1080. Poster: `pictures/FoxGlovePath-poster.jpg`.
-- `videos/HemlockTrailStream.mp4` — about 10 seconds, portrait 1080×1920, about 28 MB. Plays muted on the left of The Path Forward. Poster: `pictures/HemlockTrailStream-poster.jpg`.
+- `videos/HemlockTrailStream.mp4` — about 10 seconds, portrait 1080×1920, about 28 MB. Plays muted on the left of The Path Forward, from the title down to the last step. Poster: `pictures/HemlockTrailStream-poster.jpg`.
 
 Other clips in `videos/`, local only:
 
