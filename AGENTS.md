@@ -3,7 +3,8 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: About page — the landscape behind “Reveal Botanicals is set in…” is Yellow Aster Butte (`pictures/YellowAsterButte.web.jpg`). It spans the full page width at its natural height.
+- Last published work: About page — the nursing line ends with “Oncology, Cardiothoracic.” The three organization logos under it are 161px tall, about 15% larger than before.
+- About landscape remains Yellow Aster Butte (`pictures/YellowAsterButte.web.jpg`), full page width at its natural height.
 - Homepage remains: the hero photo is behind “Reveal Botanicals,” with the original dark tint. `videos/FoxGlovePath.mp4` plays on a muted loop between “Immerse Yourself” and “How I Offer Support.” A refresh opens at the top of the page.
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
 - Services page remains published: “Integrated with BODYSITE” matches “The Path Forward” at 40px (32px on a phone).
