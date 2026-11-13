@@ -3,7 +3,8 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: on the homepage, “Ready to Feel Better?” sits on the bottom of the aurora photo. “Your health journey…” stays below that photo.
+- Last published work: on the About page, “Reveal Botanicals is set…” sits at the top of the Yellow Aster Butte photo, in the site’s darker purple (`#5C4080`). On a phone that photo is the full width of the screen so the words stay on the sky. On a wider screen the photo stays 70% of the page width.
+- On the homepage, “Ready to Feel Better?” sits on the bottom of the aurora photo. “Your health journey…” stays below that photo.
 - “The Path Forward” on the Services page is bold. Its size is still 40px, and 32px on a phone.
 - The page names in the menu are 22px. On a screen narrower than 1280px the menu is the button, so those larger names stay whole. Below 1540px the words beside the logo are hidden; the logo already reads Reveal Botanicals.
 - The Hemlock Trail video stays on the left of The Path Forward and reaches that section title.

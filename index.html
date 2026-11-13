@@ -168,8 +168,8 @@ h3 { font-family: 'Sorts Mill Goudy', serif; font-size: 26px; font-weight: 400; 
 .photo-about { border-radius: 12px; width: 100%; aspect-ratio: 4/5; object-fit: cover; box-shadow: 0 8px 30px rgba(45,36,56,0.15); }
 .about-landscape { position: relative; width: 70%; margin: 0 auto; }
 .about-landscape img { display: block; width: 100%; height: auto; }
-.about-landscape-caption { position: absolute; bottom: 30px; left: 0; right: 0; text-align: center; padding: 0 20px; }
-.about-landscape-caption p { font-family: 'Sorts Mill Goudy', serif; font-size: 20px; color: white; letter-spacing: 0.5px; margin: 0; line-height: 1.45; }
+.about-landscape-caption { position: absolute; top: 30px; left: 0; right: 0; text-align: center; padding: 0 20px; }
+.about-landscape-caption p { font-family: 'Sorts Mill Goudy', serif; font-size: 20px; color: var(--purple-dark); letter-spacing: 0.5px; margin: 0; line-height: 1.45; }
 .about-layout { align-items: stretch; }
 .about-layout .about-photo { position: relative; min-height: 100%; }
 .about-layout .photo-about { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: center center; }
@@ -389,6 +389,10 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
   .legend { flex-direction: column; gap: 8px; }
   .arora-quote { transform: translateY(-34px); }
   .arora-cta-title { bottom: 8px; }
+  .about-landscape { width: 100%; }
+  .about-landscape-caption { top: 14px; padding: 0 14px; }
+  .about-landscape-caption p { font-size: 16px; line-height: 1.35; }
+  .about-landscape-break { display: none; }
 }
 
 
@@ -1138,7 +1142,7 @@ body.collection-active { background: var(--deep-plum); }
 <section class="about-landscape">
   <img src="pictures/YellowAsterButte.web.jpg" alt="Yellow Aster Butte, with purple wildflowers and snowy peaks" width="2784" height="1552">
   <div class="about-landscape-caption">
-    <p>Reveal Botanicals is set in and inspired by<br>the <em>dramatic landscapes</em> of the Pacific Northwest</p>
+    <p>Reveal Botanicals is set in and inspired by <br class="about-landscape-break">the <em>dramatic landscapes</em> of the Pacific Northwest</p>
   </div>
 </section>
 
