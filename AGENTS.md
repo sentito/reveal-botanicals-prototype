@@ -3,11 +3,12 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: the page names on the menu bar are 18px. They had been 14px, then 22px.
+- Last published work: on Services, “The Path Forward” is 42px (34px on a phone). The five step sentences are 15px. “New to herbalism…” uses the darker body color `#2D2438`.
+- The page names on the menu bar are 18px. They had been 14px, then 22px.
 - The Hemlock Trail video on the Services page plays as soon as that page is open. Sound plays only while the pointer is over the video. On a phone, a tap turns the sound on and a second tap turns it off. The loop is 6 seconds.
 - On the About page, “Reveal Botanicals is set…” sits at the top of the Yellow Aster Butte photo, in the site’s darker purple (`#5C4080`). On a phone that photo is the full width of the screen so the words stay on the sky. On a wider screen the photo stays 70% of the page width.
 - On the homepage, “Ready to Feel Better?” sits on the bottom of the aurora photo. “Your health journey…” stays below that photo.
-- “The Path Forward” on the Services page is bold. Its size is still 40px, and 32px on a phone.
+- “The Path Forward” on the Services page is bold, 42px, and 34px on a phone. The five sentences under it are 15px. “New to herbalism…” is `#2D2438`.
 - The page names on the menu bar are 18px. On a screen narrower than 1280px the menu is the button, so those names stay whole. Below 1540px the words beside the logo are hidden; the logo already reads Reveal Botanicals. The opened phone menu names stay 22px.
 - The Hemlock Trail video stays on the left of The Path Forward and reaches that section title.
 - The homepage specialty line says “Immunometabolic.”
@@ -16,7 +17,7 @@
 - The nursing line still ends with “Oncology, Cardiothoracic.” The three organization logos under it are 161px tall.
 - Homepage remains: the hero photo is behind “Reveal Botanicals,” with the original dark tint. `videos/FoxGlovePath.mp4` plays on a muted loop between “Immerse Yourself” and “How I Offer Support.” A refresh opens at the top of the page.
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
-- Services page remains published: “Integrated with BODYSITE” matches “The Path Forward” at 40px (32px on a phone).
+- Services page remains published: “Integrated with BODYSITE” is 40px (32px on a phone).
 - Repo state: the homepage uses the 26-second cut. The untrimmed source is also in the repo at `videos/Fox Glove with path.mp4` (31.3 seconds, about 42 MB) and is not used on the page. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
 - Word docs in the folder are historical change lists, not the current backlog
 - Next step: waiting on the next change. The dark tint stays on the hero photo only. The foxglove video has no tint.

@@ -225,7 +225,8 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
 .path-forward .step::after { display: none; }
 .path-forward .step-num { grid-column: 1; grid-row: 1 / span 2; margin: 0; align-self: center; }
 .path-forward .step h4 { grid-column: 2; grid-row: 1; margin: 0; align-self: end; }
-.path-forward .step p { grid-column: 2; grid-row: 2; }
+.path-forward h2 { font-size: 42px; }
+.path-forward .step p { grid-column: 2; grid-row: 2; font-size: 15px; }
 .path-forward-media {
   position: relative;
   height: 0;
@@ -373,6 +374,7 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
   .path-forward { grid-template-columns: 1fr; row-gap: 28px; justify-items: center; }
   .path-forward-copy { grid-column: 1; grid-row: 1; width: 100%; }
   .path-forward .steps { width: 100%; }
+  .path-forward h2 { font-size: 34px; }
   .path-forward-media { grid-column: 1; grid-row: 2; }
   .path-forward-media { height: auto; min-height: 0; width: min(70vw, 260px); aspect-ratio: auto; }
   .path-forward-video { position: static; width: 100%; height: auto; }
@@ -1272,7 +1274,7 @@ body.collection-active { background: var(--deep-plum); }
     <div class="path-forward">
     <div class="path-forward-copy">
     <h2 style="text-align: center; margin-bottom: 6px; font-weight: bold;">The Path Forward</h2>
-    <p class="subtitle" style="text-align: center; font-size: 20px;">New to herbalism? Here's what to expect</p>
+    <p class="subtitle" style="text-align: center; font-size: 20px; color: var(--text-dark);">New to herbalism? Here's what to expect</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
