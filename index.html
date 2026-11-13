@@ -208,7 +208,7 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
 }
 .path-forward-copy { grid-column: 2; grid-row: 1; min-width: 0; }
 .path-forward .steps { flex-direction: column; gap: 22px; }
-.path-forward-media { grid-column: 1; grid-row: 1; }
+.path-forward-media { grid-column: 1; grid-row: 1; cursor: pointer; }
 .path-forward .step {
   flex: none;
   text-align: left;
@@ -1280,8 +1280,8 @@ body.collection-active { background: var(--deep-plum); }
     </div>
     </div>
     <div class="path-forward-media">
-      <video class="path-forward-video" muted loop playsinline preload="none" poster="pictures/HemlockTrailStream-poster.jpg" aria-label="A stream along the Hemlock Trail">
-        <source src="videos/HemlockTrailStream.mp4" type="video/mp4">
+      <video class="path-forward-video" loop playsinline preload="none" poster="pictures/HemlockTrailStream-poster.jpg" aria-label="A stream along the Hemlock Trail">
+        <source src="videos/HemlockTrailStream-5s.mp4" type="video/mp4">
       </video>
     </div>
     </div>
@@ -2065,15 +2065,34 @@ function syncHeroVideo(pageId) {
 function syncPathVideo(pageId) {
   var video = document.querySelector('.path-forward-video');
   if (!video) return;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion || pageId !== 'services') {
+  if (pageId !== 'services') {
     video.pause();
     return;
   }
   video.preload = 'auto';
-  var start = function () { video.play().catch(function () {}); };
-  if (video.readyState >= 2) start();
-  else video.addEventListener('loadeddata', start, { once: true });
+}
+
+function bindPathVideoHover() {
+  var video = document.querySelector('.path-forward-video');
+  var box = document.querySelector('.path-forward-media');
+  if (!video || !box) return;
+  function playWithSound() {
+    video.muted = false;
+    video.play().catch(function () {});
+  }
+  box.addEventListener('pointerenter', function (e) {
+    if (e.pointerType !== 'mouse') return;
+    playWithSound();
+  });
+  box.addEventListener('pointerleave', function (e) {
+    if (e.pointerType !== 'mouse') return;
+    video.pause();
+  });
+  box.addEventListener('pointerup', function (e) {
+    if (e.pointerType === 'mouse') return;
+    if (video.paused) playWithSound();
+    else video.pause();
+  });
 }
 
 function showPage(pageId) {
@@ -2091,6 +2110,7 @@ function showPage(pageId) {
 }
 syncHeroVideo('home');
 syncPathVideo('home');
+bindPathVideoHover();
 (function () {
   var keepPageTop = true;
   function releasePageTop() { keepPageTop = false; }

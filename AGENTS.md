@@ -3,9 +3,10 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: the homepage specialty line says “Immunometabolic.”
+- Last published work: the Services page Hemlock Trail video plays its first 5 seconds, with sound, while the pointer is over it. On a phone, a tap starts it and a second tap pauses it.
+- The Hemlock Trail video stays on the left of The Path Forward and reaches that section title.
+- The homepage specialty line says “Immunometabolic.”
 - The homepage title “Reveal Botanicals” sits 10px lower.
-- The Hemlock Trail video remains on the left of The Path Forward and reaches that section title.
 - The menu bar remains 112px tall, with `pictures/RB Logo.png` filling that height.
 - The nursing line still ends with “Oncology, Cardiothoracic.” The three organization logos under it are 161px tall.
 - Homepage remains: the hero photo is behind “Reveal Botanicals,” with the original dark tint. `videos/FoxGlovePath.mp4` plays on a muted loop between “Immerse Yourself” and “How I Offer Support.” A refresh opens at the top of the page.
@@ -18,11 +19,12 @@
 On the site:
 
 - `videos/FoxGlovePath.mp4` — 26 seconds, about 24.2 MB, 1920×1080. Poster: `pictures/FoxGlovePath-poster.jpg`.
-- `videos/HemlockTrailStream.mp4` — about 10 seconds, portrait 1080×1920, about 28 MB. Plays muted on the left of The Path Forward, from the title down to the last step. Poster: `pictures/HemlockTrailStream-poster.jpg`.
+- `videos/HemlockTrailStream-5s.mp4` — 5 seconds, about 13.1 MB, portrait 1080×1920, with sound. Loops while the pointer is over the video on the left of The Path Forward. On a phone, a tap starts it and a second tap pauses it. Poster: `pictures/HemlockTrailStream-poster.jpg`.
+- `videos/HemlockTrailStream.mp4` — the full clip, about 10 seconds, about 28 MB. It stays in the repo and is not used on the page.
 
 Other clips in `videos/`, local only:
 
-- `HemlockTrailStream.mov` — original phone clip. The MP4 is on the Services page. Do not commit the `.mov`.
+- `HemlockTrailStream.mov` — original phone clip. The 5-second MP4 is on the Services page. Do not commit the `.mov`.
 - `Butterflies.mp4`
 - `AdobeStock_379225077.mp4` — Baikal Skullcap stock clip
 
