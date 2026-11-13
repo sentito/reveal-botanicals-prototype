@@ -1,19 +1,25 @@
 # Project agent notes
 
-## Current status (2026-11-08)
+## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: Services page — “Integrated with BODYSITE” matches “The Path Forward” at 40px (32px on a phone).
+- Last published work: Homepage hero plays `videos/FoxGlovePath.mp4` on a muted loop. It is the first 26 seconds of `Fox Glove with path.mp4`. The same dark tint stays over the video so the title remains readable. The clip starts by itself. Sound stays off so the browser will start it without a click.
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
-- Repo state: site changes are on `origin main`. The videos below are local only and are not committed.
+- Services page remains published: “Integrated with BODYSITE” matches “The Path Forward” at 40px (32px on a phone).
+- Repo state: this hero video is the latest site change. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
 - Word docs in the folder are historical change lists, not the current backlog
-- Next step: the user will choose which MP4 to put on the site, and where. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
+- Next step: the user will say if the hero crop, tint, or placement should change.
 
-Videos ready in `videos/`, converted from the zip, not on the website yet:
+On the site:
 
-- `IMG_7273.mp4` — 12 seconds, 14.6 MB, 1920×1080
-- `IMG_7258.mp4` — 31 seconds, 42.0 MB, 1920×1080
-- `AdobeStock_379225077.mp4` — 15 seconds, 21.3 MB, 1920×1080. Baikal Skullcap stock clip.
+- `videos/FoxGlovePath.mp4` — 26 seconds, about 24.2 MB, 1920×1080. Poster: `pictures/FoxGlovePath-poster.jpg`.
+
+Other clips in `videos/`, local only:
+
+- `Fox Glove with path.mp4` — full 31-second source
+- `HemlockTrailStream.mp4` — about 10 seconds, portrait, converted from the `.mov`
+- `Butterflies.mp4`
+- `AdobeStock_379225077.mp4` — Baikal Skullcap stock clip
 
 `pictures/` is where photos are dropped. `videos/` is where videos are dropped. Web video format for this site is MP4.
 
