@@ -3,13 +3,13 @@
 ## Current status (2026-11-13)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: Services page — the two shop names are each on one line, side by side, with “- or -” between them. The logos match in height. The Five Flavors logo’s white is softened toward the cream of that section.
+- Last published work: About page — the landscape behind “Reveal Botanicals is set in…” is Yellow Aster Butte (`pictures/YellowAsterButte.web.jpg`). It spans the full page width at its natural height.
 - Homepage remains: the hero photo is behind “Reveal Botanicals,” with the original dark tint. `videos/FoxGlovePath.mp4` plays on a muted loop between “Immerse Yourself” and “How I Offer Support.” A refresh opens at the top of the page.
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
 - Services page remains published: “Integrated with BODYSITE” matches “The Path Forward” at 40px (32px on a phone).
 - Repo state: the homepage uses the 26-second cut. The untrimmed source is also in the repo at `videos/Fox Glove with path.mp4` (31.3 seconds, about 42 MB) and is not used on the page. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
 - Word docs in the folder are historical change lists, not the current backlog
-- Next step: the dark tint stays on the hero photo only. The foxglove video has no tint.
+- Next step: waiting on the next change. The dark tint stays on the hero photo only. The foxglove video has no tint.
 
 On the site:
 
