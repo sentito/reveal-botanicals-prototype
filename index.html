@@ -253,20 +253,25 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
 .quote-divider { background: var(--gold-light); padding: 50px 40px; text-align: center; border-top: 1px solid rgba(196,162,101,0.2); border-bottom: 1px solid rgba(196,162,101,0.2); }
 .quote-divider blockquote { border-left: none; text-align: center; font-size: 20px; max-width: 650px; margin: 0 auto; color: var(--purple-dark); }
 .quote-divider .attribution { font-family: 'Raleway', sans-serif; font-style: normal; font-size: 12px; color: var(--gold); margin-top: 14px; letter-spacing: 1px; text-transform: uppercase; }
-.quote-kimmerer { position: relative; padding: 130px 40px; }
+.quote-kimmerer { display: flex; align-items: center; justify-content: center; min-height: 437px; padding: 0 40px; }
+.quote-kimmerer-row { display: flex; align-items: center; justify-content: center; gap: 15px; }
 .quote-kimmerer-photo {
-  position: absolute;
-  top: 0;
-  left: calc((50% - 294px) / 2);
-  height: 100%;
+  position: static;
+  height: 437px;
   width: auto;
   aspect-ratio: 640 / 853;
   object-fit: cover;
   display: block;
-  transform: translateX(-50%);
+  flex: 0 0 auto;
 }
+.quote-kimmerer-copy { width: max-content; max-width: 100%; }
+.quote-kimmerer-copy blockquote { max-width: none; margin: 0; width: max-content; padding-left: 0; }
 @media (max-width: 1229px) {
+  .quote-kimmerer { display: block; min-height: 0; padding: 130px 40px; }
+  .quote-kimmerer-row { display: block; }
   .quote-kimmerer-photo { display: none; }
+  .quote-kimmerer-copy { width: auto; }
+  .quote-kimmerer-copy blockquote { width: auto; max-width: 650px; }
 }
 
 .services-tea-image {
@@ -1170,9 +1175,13 @@ body.collection-active { background: var(--deep-plum); }
 
 <!-- Robin Wall Kimmerer Quote -->
 <section class="quote-divider quote-kimmerer">
-  <blockquote>&ldquo;I imagine if we acknowledged that everything we consume is the gift of Mother Earth, we would take better care of what we are given.&rdquo;</blockquote>
-  <div class="attribution">Robin Wall Kimmerer</div>
-  <img class="quote-kimmerer-photo" src="pictures/Echinacea.jpeg" alt="Echinacea flowers with a bee">
+  <div class="quote-kimmerer-row">
+    <img class="quote-kimmerer-photo" src="pictures/Echinacea.jpeg" alt="Echinacea flowers with a bee">
+    <div class="quote-kimmerer-copy">
+      <blockquote>&ldquo;I imagine if we acknowledged that everything we consume is the gift of Mother Earth,<br>we would take better care of what we are given.&rdquo;</blockquote>
+      <div class="attribution">Robin Wall Kimmerer</div>
+    </div>
+  </div>
 </section>
 
 <!-- Personal Story (moved from Home to About) -->
