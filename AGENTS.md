@@ -3,7 +3,7 @@
 ## Current status (2026-11-14)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: On the homepage, Explore Services stays clear until hover. On hover the gold fill inside the button is at 50% opacity. The outline and the label stay fully opaque.
+- Last published work: On Botanical Sanctuary, the line under the masthead reads “Click any thumbnail to explore representatives of the botanical sanctuary.”
 - On About, the Echinacea photo and the Kimmerer quote sit together in the banner. The photo’s left edge lines up with the “I listen…” line above it. The photo corners are rounded 12px. There are 25px between the photo and the words. The banner is 439px tall at 1280px. Below 1230px the photo is hidden and the quote stays centered.
 - On About, the landscape above Education & Credentials is `pictures/YellowAsterButte no words.web.jpg`. The caption sits over the upper left.
 - The page names on the menu bar sit together on the right. The gap between names is 17px.
