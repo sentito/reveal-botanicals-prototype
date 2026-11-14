@@ -3,7 +3,7 @@
 ## Current status (2026-11-14)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: On the homepage, Explore Services is at half opacity. Hover still lifts it and fills it with gold. Book a Discovery Call stays fully opaque.
+- Last published work: On Pricing, the three Value Packages use the same light lavender outline as the BodySite items, `1.5px solid #C9B0E6`.
 - On About, the Echinacea photo is centered between the left edge of the page and the Kimmerer quote, and it fills the banner height. The banner padding is 130px (364px tall at 1280px). Below 1230px the photo is hidden.
 - On About, the landscape above Education & Credentials is `pictures/YellowAsterButte no words.web.jpg`. The caption sits over the upper left.
 - The page names on the menu bar sit together on the right. The gap between names is 17px.
