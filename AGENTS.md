@@ -3,7 +3,8 @@
 ## Current status (2026-11-14)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: On Pricing, the photo above the footer is `pictures/elecampane.jpeg`. It keeps the full content width and its natural height (1280×771), so on a wide screen it is about 675px tall.
+- Last published work: On About, the Echinacea photo is on the left of the Kimmerer quote. The banner is about 30% taller (304px on a wide screen, up from 234px) and the photo fills that height. Below 1150px the photo is hidden so it does not cover the quote.
+- On About, the Echinacea photo sits on the left of the Kimmerer quote and fills the banner height. The banner padding is 100px. Below 1150px the photo is hidden.
 - On About, the landscape is `pictures/YellowAsterButte with words.web.jpg`. The words are part of the photo. The old caption on top of the photo is gone.
 - The page names on the menu bar sit together on the right. The gap between names is 17px.
 - On the About page, “Reveal Botanicals is set…” is printed in the Yellow Aster Butte photo. There is no separate caption on top of it.
