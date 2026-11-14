@@ -3,7 +3,7 @@
 ## Current status (2026-11-14)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: On About, the Kimmerer banner is 439px tall at 1280px. The Echinacea photo and the quote are centered together, with 15px between the photo and the words.
+- Last published work: On the homepage, the Explore Services outline and the words inside it are fully opaque. The inside of the button is clear. On hover it still fills with gold, the words turn dark, and it lifts 2px.
 - On About, the Echinacea photo and the Kimmerer quote are centered together on the page. The photo fills the banner, which is 439px tall at 1280px. There are 15px between the photo and the words. Below 1230px the photo is hidden and the quote stays centered.
 - On About, the landscape above Education & Credentials is `pictures/YellowAsterButte no words.web.jpg`. The caption sits over the upper left.
 - The page names on the menu bar sit together on the right. The gap between names is 17px.
@@ -27,7 +27,7 @@
 - Services page: “Integrated with BODYSITE” is 40px (32px on a phone). The title and the seven items are on the left. `pictures/Carol at Desk.jpeg` is on the right, with Visit BodySite Portal on the lower part of the photo. On a phone the items stack, then the photo. The FullScript icon is the white supplement bottle. Each of the seven items has a light lavender outline (`#C9B0E6`).
 - Repo state: the homepage uses the 26-second cut. The untrimmed source is also in the repo at `videos/Fox Glove with path.mp4` (31.3 seconds, about 42 MB) and is not used on the page. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
 - Word docs in the folder are historical change lists, not the current backlog
-- Next step: waiting on the next change. The FullScript icon is the white supplement bottle. Do not put the Hemlock stream back on The Path Forward. Do not reopen the solid menu bar or the grouped 17px menu names. The Yellow Aster Butte caption starts 107px from the left of the photo on a wide screen, and “the” stays on the first line. On a phone it stays two lines in the sky. The hero photo stays at 90% opacity with the original dark tint. The foxglove video has no tint. The Pricing foxglove stays on the left of the title and the four services. Its column is 38% and the framing is `object-position: 40%`, which keeps the extra right side from the 52% trial and restores the same amount on the left.
+- Next step: waiting on the next change. The FullScript icon is the white supplement bottle. Do not put the Hemlock stream back on The Path Forward. Do not reopen the solid menu bar or the grouped 17px menu names. The Yellow Aster Butte caption starts 107px from the left of the photo on a wide screen, and “the” stays on the first line. On a phone it stays two lines in the sky. The hero photo stays at 90% opacity with the original dark tint. The foxglove video has no tint. The Pricing foxglove stays on the left of the title and the four services. Its column is 38% and the framing is `object-position: 40%`, which keeps the extra right side from the 52% trial and restores the same amount on the left. The homepage Explore Services button keeps a fully opaque gold outline and a fully opaque white label, with a clear inside. Hover still fills that button with gold.
 
 On the site:
 
