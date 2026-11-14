@@ -3,7 +3,7 @@
 ## Current status (2026-11-14)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: On Services, Trail Mtn Forest replaces the Hemlock stream video on the left of The Path Forward. The picture is shown whole. The five steps stay to its right.
+- Last published work: On About, the Kimmerer quote banner is 30px taller. The quote stays centered. Echinacea sits on the right and matches the banner height. On a narrow screen the flower is hidden so it does not cover the words.
 - The page names on the menu bar sit together on the right. The gap between names is 17px.
 - On the About page, “Reveal Botanicals is set…” is a darker blue (`#0E3A6E`), a little heavier, with a light edge so it stands out on the sky.
 - On the homepage, “Your health journey…” and the Schedule button sit 20px below the aurora photo.
