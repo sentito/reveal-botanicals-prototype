@@ -3,7 +3,7 @@
 ## Current status (2026-11-14)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: On Services, The Path Forward photo is `pictures/Ptarmigan view.jpeg`. On a wide screen its top lines up with the heading and its bottom lines up with the last line of step 5.
+- Last published work: On Pricing, the photo above the footer is `pictures/elecampane.jpeg`. It keeps the full content width and its natural height (1280×771), so on a wide screen it is about 675px tall.
 - On About, the landscape is `pictures/YellowAsterButte with words.web.jpg`. The words are part of the photo. The old caption on top of the photo is gone.
 - The page names on the menu bar sit together on the right. The gap between names is 17px.
 - On the About page, “Reveal Botanicals is set…” is printed in the Yellow Aster Butte photo. There is no separate caption on top of it.
