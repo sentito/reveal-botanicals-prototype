@@ -172,8 +172,10 @@ a.home-immerse { color: inherit; text-decoration: underline; text-decoration-col
 a.home-immerse:hover, a.home-immerse:focus-visible { color: #8B62B5; text-decoration-color: #8B62B5; }
 .about-landscape { position: relative; width: 70%; margin: 0 auto; }
 .about-landscape img { display: block; width: 100%; height: auto; }
-.about-landscape-caption { position: absolute; top: 26px; left: 107px; max-width: 68%; text-align: left; }
-.about-landscape-caption p { font-family: 'Sorts Mill Goudy', serif; font-size: 20px; font-weight: 600; color: #0E3A6E; letter-spacing: 0.5px; margin: 0; line-height: 1.45; text-shadow: 0 1px 0 rgba(255,255,255,0.55); }
+.about-landscape-caption { position: absolute; top: 26px; left: 107px; width: max-content; max-width: calc(100% - 120px); text-align: left; }
+.about-landscape-caption p { position: relative; font-family: 'Sorts Mill Goudy', serif; font-size: 20px; font-weight: 600; color: #0E3A6E; letter-spacing: 0.5px; margin: 0; line-height: 1.45; text-shadow: 0 1px 0 rgba(255,255,255,0.55); }
+.about-landscape-line1 { display: block; white-space: nowrap; }
+.about-landscape-line2 { display: block; position: absolute; left: 50%; top: 1.45em; transform: translateX(-50%); white-space: nowrap; }
 .about-layout { align-items: stretch; }
 .about-layout .about-photo { position: relative; min-height: 100%; }
 .about-layout .photo-about { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: center center; }
@@ -420,8 +422,9 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
   .arora-quote { transform: translateY(-34px); }
   .arora-cta-title { bottom: 8px; }
   .about-landscape { width: 100%; }
-  .about-landscape-caption { top: 12px; left: 14px; max-width: calc(100% - 28px); }
+  .about-landscape-caption { top: 12px; left: 34px; width: max-content; max-width: calc(100% - 48px); }
   .about-landscape-caption p { font-size: 15px; line-height: 1.3; }
+  .about-landscape-line2 { top: 1.3em; }
 }
 
 
@@ -1200,7 +1203,7 @@ body.collection-active { background: var(--deep-plum); }
 <section class="about-landscape">
   <img src="../pictures/YellowAsterButte%20no%20words.web.jpg" alt="Yellow Aster Butte, with purple wildflowers and snowy peaks" width="1280" height="635">
   <div class="about-landscape-caption">
-    <p>Reveal Botanicals is set in and inspired by the<br class="about-landscape-break"><em>dramatic landscapes</em> of the Pacific Northwest</p>
+    <p><span class="about-landscape-line1">Reveal Botanicals is set in and inspired by</span><span class="about-landscape-line2">the <em>dramatic landscapes</em> of the Pacific Northwest</span></p>
   </div>
 </section>
 
