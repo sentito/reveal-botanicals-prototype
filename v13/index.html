@@ -255,8 +255,8 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
 .quote-divider { background: var(--gold-light); padding: 50px 40px; text-align: center; border-top: 1px solid rgba(196,162,101,0.2); border-bottom: 1px solid rgba(196,162,101,0.2); }
 .quote-divider blockquote { border-left: none; text-align: center; font-size: 20px; max-width: 650px; margin: 0 auto; color: var(--purple-dark); }
 .quote-divider .attribution { font-family: 'Raleway', sans-serif; font-style: normal; font-size: 12px; color: var(--gold); margin-top: 14px; letter-spacing: 1px; text-transform: uppercase; }
-.quote-kimmerer { display: flex; align-items: center; justify-content: center; min-height: 437px; padding: 0 40px; }
-.quote-kimmerer-row { display: flex; align-items: center; justify-content: center; gap: 15px; }
+.quote-kimmerer { display: flex; align-items: center; justify-content: center; min-height: 437px; padding: 0; }
+.quote-kimmerer-row { display: flex; align-items: center; justify-content: flex-start; gap: 25px; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; box-sizing: border-box; }
 .quote-kimmerer-photo {
   position: static;
   height: 437px;
@@ -265,12 +265,13 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
   object-fit: cover;
   display: block;
   flex: 0 0 auto;
+  border-radius: 12px;
 }
 .quote-kimmerer-copy { width: max-content; max-width: 100%; }
 .quote-kimmerer-copy blockquote { max-width: none; margin: 0; width: max-content; padding-left: 0; }
 @media (max-width: 1229px) {
   .quote-kimmerer { display: block; min-height: 0; padding: 130px 40px; }
-  .quote-kimmerer-row { display: block; }
+  .quote-kimmerer-row { display: block; width: auto; max-width: none; margin: 0; padding: 0; }
   .quote-kimmerer-photo { display: none; }
   .quote-kimmerer-copy { width: auto; }
   .quote-kimmerer-copy blockquote { width: auto; max-width: 650px; }

@@ -3,8 +3,8 @@
 ## Current status (2026-11-14)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: On About, the Yellow Aster caption’s second line begins with “the” and is centered under the first line. On a wide screen the first line still starts 107px from the left of the photo.
-- On About, the Echinacea photo and the Kimmerer quote are centered together on the page. The photo fills the banner, which is 439px tall at 1280px. There are 15px between the photo and the words. Below 1230px the photo is hidden and the quote stays centered.
+- Last published work: On About, the Echinacea photo’s left edge lines up with “I listen…”. The photo corners are rounded. There are 25px between the photo and the Kimmerer quote.
+- On About, the Echinacea photo and the Kimmerer quote sit together in the banner. The photo’s left edge lines up with the “I listen…” line above it. The photo corners are rounded 12px. There are 25px between the photo and the words. The banner is 439px tall at 1280px. Below 1230px the photo is hidden and the quote stays centered.
 - On About, the landscape above Education & Credentials is `pictures/YellowAsterButte no words.web.jpg`. The caption sits over the upper left.
 - The page names on the menu bar sit together on the right. The gap between names is 17px.
 - On the About page, “Reveal Botanicals is set…” is a caption over the Yellow Aster Butte photo that has no words in the picture. On a wide screen the first line starts 107px from the left of the photo. The second line begins with “the” and is centered under the first line.
