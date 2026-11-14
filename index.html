@@ -206,14 +206,14 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
 .step p { font-size: 14px; color: var(--text-medium); }
 .path-forward {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: minmax(220px, 40%) minmax(0, 1fr);
   column-gap: 48px;
-  align-items: stretch;
+  align-items: start;
   margin-top: 0;
 }
 .path-forward-copy { grid-column: 2; grid-row: 1; min-width: 0; }
 .path-forward .steps { flex-direction: column; gap: 22px; }
-.path-forward-media { grid-column: 1; grid-row: 1; cursor: pointer; }
+.path-forward-media { grid-column: 1; grid-row: 1; }
 .path-forward .step {
   flex: none;
   text-align: left;
@@ -228,19 +228,9 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
 .path-forward .step h4 { grid-column: 2; grid-row: 1; margin: 0; align-self: end; }
 .path-forward h2 { font-size: 42px; }
 .path-forward .step p { grid-column: 2; grid-row: 2; font-size: 15px; }
-.path-forward-media {
-  position: relative;
-  height: 0;
-  min-height: calc(100% + 20px);
-  aspect-ratio: 1080 / 1920;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #2D2438 url('pictures/HemlockTrailStream-poster.jpg') center / cover no-repeat;
-}
-.path-forward-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-@media (prefers-reduced-motion: reduce) {
-  .path-forward-video { display: none; }
-}
+.services-path { padding: 80px 40px 60px; }
+.path-forward-media { border-radius: 12px; overflow: hidden; }
+.path-forward-photo { display: block; width: 100%; height: auto; }
 
 .testimonial-section { background: var(--cream); padding: 80px 40px; text-align: center; }
 .testimonial { max-width: 680px; margin: 0 auto; background: white; border-radius: 16px; padding: 50px 45px; box-shadow: 0 4px 30px rgba(45,36,56,0.08); border: 1px solid rgba(123,94,167,0.12); position: relative; }
@@ -372,13 +362,12 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
   .about-layout .photo-about { position: static; height: auto; aspect-ratio: 2/3; }
   .cards-3, .blog-grid, .package-grid { grid-template-columns: 1fr; }
   .steps { flex-direction: column; } .step::after { display: none; }
+  .services-path { padding-bottom: 110px; }
   .path-forward { grid-template-columns: 1fr; row-gap: 28px; justify-items: center; }
   .path-forward-copy { grid-column: 1; grid-row: 1; width: 100%; }
   .path-forward .steps { width: 100%; }
   .path-forward h2 { font-size: 34px; }
-  .path-forward-media { grid-column: 1; grid-row: 2; }
-  .path-forward-media { height: auto; min-height: 0; width: min(70vw, 260px); aspect-ratio: auto; }
-  .path-forward-video { position: static; width: 100%; height: auto; }
+  .path-forward-media { grid-column: 1; grid-row: 2; width: min(70vw, 260px); }
   .service-item { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .btn-outline { margin-left: 0; margin-top: 12px; }
@@ -1293,7 +1282,7 @@ body.collection-active { background: var(--deep-plum); }
 <div class="page-label">SERVICES</div>
 
 <!-- The Path Forward -->
-<section class="section-alt" style="padding: 80px 40px 110px;">
+<section class="section-alt services-path">
   <div style="max-width: 1200px; margin: 0 auto;">
     <div class="path-forward">
     <div class="path-forward-copy">
@@ -1328,9 +1317,7 @@ body.collection-active { background: var(--deep-plum); }
     </div>
     </div>
     <div class="path-forward-media">
-      <video class="path-forward-video" muted loop playsinline preload="none" poster="pictures/HemlockTrailStream-poster.jpg" aria-label="A stream along the Hemlock Trail">
-        <source src="videos/HemlockTrailStream-loop.mp4" type="video/mp4">
-      </video>
+      <img class="path-forward-photo" src="pictures/Trail%20Mtn%20Forest.jpeg" alt="A trail through mountain forest">
     </div>
     </div>
   </div>
@@ -2119,59 +2106,6 @@ function syncHeroVideo(pageId) {
   else video.addEventListener('loadeddata', start, { once: true });
 }
 
-function syncPathVideo(pageId) {
-  var video = document.querySelector('.path-forward-video');
-  if (!video) return;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion || pageId !== 'services') {
-    video.pause();
-    video.muted = true;
-    return;
-  }
-  video.muted = true;
-  video.preload = 'auto';
-  var start = function () {
-    var page = document.querySelector('.page.active');
-    if (!page || page.id !== 'page-services') return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    video.play().catch(function () {});
-  };
-  if (video.readyState >= 2) start();
-  else video.addEventListener('loadeddata', start, { once: true });
-}
-
-function bindPathVideoHover() {
-  var video = document.querySelector('.path-forward-video');
-  var box = document.querySelector('.path-forward-media');
-  if (!video || !box) return;
-  function soundOn() {
-    video.muted = false;
-    var pending = video.play();
-    if (pending && pending.catch) {
-      pending.catch(function () {
-        video.muted = true;
-        video.play().catch(function () {});
-      });
-    }
-  }
-  function soundOff() {
-    video.muted = true;
-  }
-  box.addEventListener('pointerenter', function (e) {
-    if (e.pointerType !== 'mouse') return;
-    soundOn();
-  });
-  box.addEventListener('pointerleave', function (e) {
-    if (e.pointerType !== 'mouse') return;
-    soundOff();
-  });
-  box.addEventListener('pointerup', function (e) {
-    if (e.pointerType === 'mouse') return;
-    if (video.muted) soundOn();
-    else soundOff();
-  });
-}
-
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + pageId).classList.add('active');
@@ -2183,11 +2117,8 @@ function showPage(pageId) {
   closeCollectionDetail();
   window.scrollTo(0, 0);
   syncHeroVideo(pageId);
-  syncPathVideo(pageId);
 }
 syncHeroVideo('home');
-syncPathVideo('home');
-bindPathVideoHover();
 (function () {
   var keepPageTop = true;
   function releasePageTop() { keepPageTop = false; }
