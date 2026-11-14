@@ -3,8 +3,8 @@
 ## Current status (2026-11-14)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: On the homepage, Explore Services lifts and fills gold on hover, the same motion as Book a Discovery Call. “Immerse Yourself in the Power of Plants” lightens to `#8B62B5` on hover.
-- On About, the Echinacea photo sits on the left of the Kimmerer quote and fills the banner height. The banner padding is 100px. Below 1150px the photo is hidden.
+- Last published work: On About, the Echinacea photo is centered between the page edge and the Kimmerer quote. The banner is 364px tall at 1280px, about 20% taller than the 304px box. The photo hides below 1230px.
+- On About, the Echinacea photo is centered between the left edge of the page and the Kimmerer quote, and it fills the banner height. The banner padding is 130px (364px tall at 1280px). Below 1230px the photo is hidden.
 - On About, the landscape above Education & Credentials is `pictures/YellowAsterButte no words.web.jpg`. The caption sits over the upper left.
 - The page names on the menu bar sit together on the right. The gap between names is 17px.
 - On the About page, “Reveal Botanicals is set…” is a caption over the upper left of the Yellow Aster Butte photo that has no words in the picture.
