@@ -25,7 +25,7 @@
 - Services page remains published: “Integrated with BODYSITE” is 40px (32px on a phone).
 - Repo state: the homepage uses the 26-second cut. The untrimmed source is also in the repo at `videos/Fox Glove with path.mp4` (31.3 seconds, about 42 MB) and is not used on the page. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
 - Word docs in the folder are historical change lists, not the current backlog
-- Next step: waiting on the next change. The dark tint stays on the hero photo only. The foxglove video has no tint.
+- Next step: the user paused here on 2026-11-13. Wait for the next change. Latest publish is `3ff17e1` on `origin main`. Do not reopen the solid menu bar, the grouped 17px menu names, the Path Forward spacing, the 2.5-to-5.5 Hemlock loop, or the About caption color. The dark tint stays on the hero photo only. The foxglove video has no tint.
 
 On the site:
 
