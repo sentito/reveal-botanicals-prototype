@@ -3,12 +3,12 @@
 ## Current status (2026-11-14)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: On Services, Carol at Desk is on the right of the BodySite text. The FullScript icon is `pictures/White Supplement Bottle.jpg`.
+- Last published work: On Services, The Path Forward photo is `pictures/Ptarmigan view.jpeg`. On a wide screen its top lines up with the heading and its bottom lines up with the last line of step 5.
 - On About, the landscape is `pictures/YellowAsterButte with words.web.jpg`. The words are part of the photo. The old caption on top of the photo is gone.
 - The page names on the menu bar sit together on the right. The gap between names is 17px.
 - On the About page, “Reveal Botanicals is set…” is printed in the Yellow Aster Butte photo. There is no separate caption on top of it.
 - On the homepage, “Your health journey…” and the Schedule button sit 20px below the aurora photo.
-- The left side of The Path Forward is `pictures/Trail Mtn Forest.jpeg`. The Hemlock stream clips stay in the repo and are not on the page.
+- The left side of The Path Forward is `pictures/Ptarmigan view.jpeg` (640×853). Trail Mtn Forest and the Hemlock stream clips stay in the repo and are not on the page.
 - On Services, “The Path Forward” is 42px (34px on a phone). The five step sentences are 15px. “New to herbalism…” uses the darker body color `#2D2438`.
 - The page names on the menu bar are 18px. They had been 14px, then 22px.
 - The Path Forward photo has no sound control. Homepage foxglove still plays muted.
@@ -16,7 +16,7 @@
 - On the homepage, “Ready to Feel Better?” sits on the bottom of the aurora photo. “Your health journey…” and the Schedule button start 20px below that photo.
 - “The Path Forward” on the Services page is bold, 42px, and 34px on a phone. The five sentences under it are 15px. “New to herbalism…” is `#2D2438`.
 - The page names on the menu bar are 18px and sit together on the right, with 17px between each name. On a screen narrower than 1280px the menu is the button, so those names stay whole. Below 1540px the words beside the logo are hidden; the logo already reads Reveal Botanicals. The opened phone menu names stay 22px.
-- Trail Mtn Forest lines up with “The Path Forward.” On a wide screen the colored box ends about 60px under the last step. On a phone the steps come first, then the photo at its natural size, and the box still ends 110px under the photo.
+- Ptarmigan view lines up with “The Path Forward.” On a wide screen the photo top matches the heading and the photo bottom matches the last line of step 5. The colored box still ends about 60px under that line. On a phone the steps come first, then the photo at its natural size, and the box still ends 110px under the photo.
 - The homepage specialty line says “Immunometabolic.”
 - The homepage title “Reveal Botanicals” sits 10px lower.
 - The menu bar remains 112px tall, with `pictures/RB Logo.png` filling that height. Its fill is solid `--warm-white` (`#FDFAFD`), with no blur. Menu page names on the bar are 18px.
@@ -33,7 +33,8 @@ On the site:
 - `videos/FoxGlovePath.mp4` — 26 seconds, about 24.2 MB, 1920×1080. Poster: `pictures/FoxGlovePath-poster.jpg`.
 - `videos/HemlockTrailStream-loop.mp4` — 2.5 seconds, about 8.4 MB, portrait 1080×1920. Not used on the page. Poster: `pictures/HemlockTrailStream-poster.jpg`.
 - `videos/HemlockTrailStream.mp4` — the full clip, about 10 seconds, about 28 MB. Not used on the page.
-- `pictures/Trail Mtn Forest.jpeg` — on the left of The Path Forward. 640×904.
+- `pictures/Ptarmigan view.jpeg` — on the left of The Path Forward. 640×853.
+- `pictures/Trail Mtn Forest.jpeg` — no longer on the page. 640×904.
 
 Other clips in `videos/`, local only:
 

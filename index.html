@@ -215,12 +215,12 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
   display: grid;
   grid-template-columns: minmax(220px, 40%) minmax(0, 1fr);
   column-gap: 48px;
-  align-items: start;
+  align-items: stretch;
   margin-top: 0;
 }
 .path-forward-copy { grid-column: 2; grid-row: 1; min-width: 0; }
 .path-forward .steps { flex-direction: column; gap: 22px; }
-.path-forward-media { grid-column: 1; grid-row: 1; }
+.path-forward-media { grid-column: 1; grid-row: 1; position: relative; min-height: 0; }
 .path-forward .step {
   flex: none;
   text-align: left;
@@ -237,7 +237,7 @@ blockquote { font-family: 'Sorts Mill Goudy', serif; font-style: italic; font-si
 .path-forward .step p { grid-column: 2; grid-row: 2; font-size: 15px; }
 .services-path { padding: 80px 40px 60px; }
 .path-forward-media { border-radius: 12px; overflow: hidden; }
-.path-forward-photo { display: block; width: 100%; height: auto; }
+.path-forward-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
 
 .testimonial-section { background: var(--cream); padding: 80px 40px; text-align: center; }
 .testimonial { max-width: 680px; margin: 0 auto; background: white; border-radius: 16px; padding: 50px 45px; box-shadow: 0 4px 30px rgba(45,36,56,0.08); border: 1px solid rgba(123,94,167,0.12); position: relative; }
@@ -388,7 +388,8 @@ footer { background: var(--deep-plum); color: rgba(255,255,255,0.8); padding: 50
   .path-forward-copy { grid-column: 1; grid-row: 1; width: 100%; }
   .path-forward .steps { width: 100%; }
   .path-forward h2 { font-size: 34px; }
-  .path-forward-media { grid-column: 1; grid-row: 2; width: min(70vw, 260px); }
+  .path-forward-media { grid-column: 1; grid-row: 2; width: min(70vw, 260px); position: static; height: auto; }
+  .path-forward-photo { position: static; width: 100%; height: auto; }
   .pricing-intro { grid-template-columns: 1fr; row-gap: 24px; }
   .pricing-intro-copy { grid-row: 2; }
   .pricing-intro-media { grid-row: 1; height: auto; }
@@ -1345,7 +1346,7 @@ body.collection-active { background: var(--deep-plum); }
     </div>
     </div>
     <div class="path-forward-media">
-      <img class="path-forward-photo" src="pictures/Trail%20Mtn%20Forest.jpeg" alt="A trail through mountain forest">
+      <img class="path-forward-photo" src="pictures/Ptarmigan%20view.jpeg" alt="Yellow wildflowers on a rocky ridge above distant mountains">
     </div>
     </div>
   </div>
