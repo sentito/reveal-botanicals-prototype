@@ -3,7 +3,7 @@
 ## Current status (2026-11-14)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: the homepage title photo is at 90% opacity. The words on it stay solid.
+- Last published work: On Services, Carol at Desk sits on the left of Integrated with BODYSITE. The heading, intro, and seven items sit on the right, in two columns (three, then four). Visit BodySite Portal is on the lower part of the photo. The FullScript item uses a pill icon.
 - The page names on the menu bar sit together on the right. The gap between names is 17px.
 - On the About page, “Reveal Botanicals is set…” is a darker blue (`#0E3A6E`), a little heavier, with a light edge so it stands out on the sky.
 - On the homepage, “Your health journey…” and the Schedule button sit 20px below the aurora photo.
@@ -22,10 +22,10 @@
 - The nursing line still ends with “Oncology, Cardiothoracic.” The three organization logos under it are 161px tall.
 - Homepage remains: the hero photo is behind “Reveal Botanicals,” at 90% opacity, with the original dark tint. The title stays solid white. `videos/FoxGlovePath.mp4` plays on a muted loop between “Immerse Yourself” and “How I Offer Support.” A refresh opens at the top of the page.
 - Contact page remains published: gold outline on the Discovery Call button, Hands at Desk photo under it, link out to the booking page. No calendar embed.
-- Services page remains published: “Integrated with BODYSITE” is 40px (32px on a phone).
+- Services page: “Integrated with BODYSITE” is 40px (32px on a phone). `pictures/Carol at Desk.jpeg` is on the left. On a phone the items stack, then the photo, with the portal button still on the photo.
 - Repo state: the homepage uses the 26-second cut. The untrimmed source is also in the repo at `videos/Fox Glove with path.mp4` (31.3 seconds, about 42 MB) and is not used on the page. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
 - Word docs in the folder are historical change lists, not the current backlog
-- Next step: waiting on the next change. Do not reopen the solid menu bar, the grouped 17px menu names, the Path Forward spacing, the blended Hemlock loop, or the About caption color. The hero photo stays at 90% opacity with the original dark tint. The foxglove video has no tint.
+- Next step: waiting on the next change. The FullScript icon is the pill. A drawn bottle is the other option if that capsule should look more like a bottle. Do not reopen the solid menu bar, the grouped 17px menu names, the Path Forward spacing, the blended Hemlock loop, or the About caption color. The hero photo stays at 90% opacity with the original dark tint. The foxglove video has no tint.
 
 On the site:
 
