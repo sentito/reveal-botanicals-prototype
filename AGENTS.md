@@ -3,17 +3,17 @@
 ## Current status (2026-11-14)
 
 - Working files: `v13/index.html` and root `index.html` (keep both in sync)
-- Last published work: On About, the Echinacea photo is on the left of the Kimmerer quote. The banner is about 30% taller (304px on a wide screen, up from 234px) and the photo fills that height. Below 1150px the photo is hidden so it does not cover the quote.
+- Last published work: On About, the landscape above Education & Credentials is `pictures/YellowAsterButte no words.web.jpg`. The sentence “Reveal Botanicals is set…” sits over the upper left of the photo.
 - On About, the Echinacea photo sits on the left of the Kimmerer quote and fills the banner height. The banner padding is 100px. Below 1150px the photo is hidden.
-- On About, the landscape is `pictures/YellowAsterButte with words.web.jpg`. The words are part of the photo. The old caption on top of the photo is gone.
+- On About, the landscape above Education & Credentials is `pictures/YellowAsterButte no words.web.jpg`. The caption sits over the upper left.
 - The page names on the menu bar sit together on the right. The gap between names is 17px.
-- On the About page, “Reveal Botanicals is set…” is printed in the Yellow Aster Butte photo. There is no separate caption on top of it.
+- On the About page, “Reveal Botanicals is set…” is a caption over the upper left of the Yellow Aster Butte photo that has no words in the picture.
 - On the homepage, “Your health journey…” and the Schedule button sit 20px below the aurora photo.
 - The left side of The Path Forward is `pictures/Ptarmigan view.jpeg` (640×853). Trail Mtn Forest and the Hemlock stream clips stay in the repo and are not on the page.
 - On Services, “The Path Forward” is 42px (34px on a phone). The five step sentences are 15px. “New to herbalism…” uses the darker body color `#2D2438`.
 - The page names on the menu bar are 18px. They had been 14px, then 22px.
 - The Path Forward photo has no sound control. Homepage foxglove still plays muted.
-- On the About page, the Yellow Aster Butte photo with the words already in it is 70% of the page width on a wide screen and the full width on a phone.
+- On the About page, the Yellow Aster Butte photo with no words in it is 70% of the page width on a wide screen and the full width on a phone. The caption is near the top, toward the left.
 - On the homepage, “Ready to Feel Better?” sits on the bottom of the aurora photo. “Your health journey…” and the Schedule button start 20px below that photo.
 - “The Path Forward” on the Services page is bold, 42px, and 34px on a phone. The five sentences under it are 15px. “New to herbalism…” is `#2D2438`.
 - The page names on the menu bar are 18px and sit together on the right, with 17px between each name. On a screen narrower than 1280px the menu is the button, so those names stay whole. Below 1540px the words beside the logo are hidden; the logo already reads Reveal Botanicals. The opened phone menu names stay 22px.
@@ -27,7 +27,7 @@
 - Services page: “Integrated with BODYSITE” is 40px (32px on a phone). The title and the seven items are on the left. `pictures/Carol at Desk.jpeg` is on the right, with Visit BodySite Portal on the lower part of the photo. On a phone the items stack, then the photo. The FullScript icon is the white supplement bottle.
 - Repo state: the homepage uses the 26-second cut. The untrimmed source is also in the repo at `videos/Fox Glove with path.mp4` (31.3 seconds, about 42 MB) and is not used on the page. Do not commit `videos/RevealBotanicals_Videos_061626.zip` (about 108 MB; GitHub rejects files over 100 MB).
 - Word docs in the folder are historical change lists, not the current backlog
-- Next step: waiting on the next change. The FullScript icon is the white supplement bottle. Do not put the Hemlock stream back on The Path Forward. Do not reopen the solid menu bar or the grouped 17px menu names. Do not put a caption back on the Yellow Aster Butte photo. The hero photo stays at 90% opacity with the original dark tint. The foxglove video has no tint. The Pricing foxglove stays on the left of the title and the four services.
+- Next step: waiting on the next change. The FullScript icon is the white supplement bottle. Do not put the Hemlock stream back on The Path Forward. Do not reopen the solid menu bar or the grouped 17px menu names. The Yellow Aster Butte caption stays over the upper left of the no-words photo. The hero photo stays at 90% opacity with the original dark tint. The foxglove video has no tint. The Pricing foxglove stays on the left of the title and the four services.
 
 On the site:
 
